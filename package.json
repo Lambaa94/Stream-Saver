@@ -1,0 +1,46 @@
+{
+  "name": "screen-saver",
+  "version": "1.0.0",
+  "description": "An application that will search streamed shows where you can save your favorites.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix .",
+    "seed": "node db/seeds.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lambaa94/Screen-Saver.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lambaa94/Screen-Saver/issues"
+  },
+  "homepage": "https://github.com/Lambaa94/Screen-Saver#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "express-session": "^1.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "mocha": "^8.1.3",
+    "prettier": "^2.1.2"
+  }
+}

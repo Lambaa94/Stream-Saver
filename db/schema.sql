@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS streamSaver_db;
+CREATE DATABASE streamSaver_db;
