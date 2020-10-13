@@ -9,7 +9,7 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/homepage");
     }
     res.render("signup");
   });
@@ -17,7 +17,7 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/homepage");
     }
     res.render("login")
   });
@@ -30,11 +30,9 @@ module.exports = function(app) {
 
 
   // The Main page of the application
-  app.get("/homepage", function(req, res) {
+  app.get("/homepage", isAuthenticated, function(req, res) {
    
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.render("index");
+    res.render("index")
+    
   });
 };
