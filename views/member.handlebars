@@ -2,25 +2,41 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       {{!-- Member Name --}}
-      <h2>Welcome <span class="member-name">{{ memberName }}</span></h2>
+      <h2>Welcome <span class="member-name">{{ name }}</span></h2>
     </div>
   </div>
 </div>
+</div>
+
+<form class="form-inline">
+  <input id="searchText"class="form-control mr-sm-2" type="search" placeholder="Search shows & movies..." aria-label="Search">
+  <button id="searchBtn" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+<div class="row">
+  <div class="col-6">
+    <h3 class="streamTitles border border-primary rounded-pill text-center">Save Your Stream Here!</h3>
+    <ol>
+      {{#each watchlists}}
+      {{#unless watched}}
+      <section class="row mb-1 pb-1">
+        <section class="col-6 float-left">
+          <li class="streamInfo text-center">{{ simMovieList }}</li>
+        </section>
+        <section class="col-6 float-right">
+          <button type="buton" class="btn btn-secondary btn-lg">Add to My Watch List</button>
+        </section>
 
 
-<body>
-  {{!-- Home page search --}}
-
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search shows & movies..." aria-label="Search">
-    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-  </form>
+        {{/unless}}
+        {{/each}}
+    </ol>
+  </div>
 
 
-  <button type="buton" class="btn btn-secondary btn-lg">Add to My Watch List</button>
 
-  <script type="text/javascript" src="members.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</body>
 
-</html>
+
+
+  {{!-- You do not need jquery here as it is in the main hbars --}}
+  {{!-- You do not need <body> or <html> tags here as this is the body and html is in main hbars --}}
