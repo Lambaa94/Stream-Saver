@@ -17,19 +17,17 @@
   <div class="col-6">
     <h3 class="streamTitles border border-primary rounded-pill text-center">Save Your Stream Here!</h3>
     <ol>
-      {{#each watchlists}}
-      {{#unless watched}}
+      
       <section class="row mb-1 pb-1">
         <section class="col-6 float-left">
-          <li class="streamInfo text-center">{{ simMovieList }}</li>
+          <li class="streamInfo text-center">{{ titleId }}</li>
         </section>
         <section class="col-6 float-right">
           <button type="buton" class="btn btn-secondary btn-lg">Add to My Watch List</button>
         </section>
 
 
-        {{/unless}}
-        {{/each}}
+       
     </ol>
   </div>
 

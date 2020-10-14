@@ -2,7 +2,7 @@
 $(document).ready(function () {
     $.get("/api/user_data").then(function(data) {
         $(".member-name").text(data.name);
-      console.log(data)
+      
     });
     
 
@@ -30,9 +30,18 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (titleData) {
             console.log(titleData)
-            titleId = titleData.results[0].id
+            titleId = titleData.results[0].id;
+            streamTitle = titleData.results[0].original_title;
+            rating = titleData.results[0].popularity;
+            mediaType = titleData.results[0].media_type;
             console.log("Movie/Show ID: " + titleId)
             console.log("Searched Movie/Show: " + Title)
+            console.log(titleId)
+            console.log(streamTitle)
+            console.log(rating)
+            console.log(mediaType)
+            
+            
 
             // Ajax call to get similar movies
             const queryUrl2 = "https://api.themoviedb.org/3/movie/" + titleId + "/similar?api_key=" + apiKey + "&language=en-US&page=1"
@@ -44,7 +53,7 @@ $(document).ready(function () {
                 let similarMovies = similarMovieData.results
                
                 // loop through the similar movie lsit to display all titles
-                for (var i = 0; i < similarMovies.length; i++) {
+                for (var i = 0; i < 3; i++) {
                     var simMovieList = similarMovies[i].original_title;
                     console.log("SIMILAR MOVIE: " + simMovieList)
                 }
@@ -61,12 +70,12 @@ $(document).ready(function () {
                 // variable directly to show titles 
                 let similarShows = similarShowData.results
                 // loop through the similar show lsit to display all titles
-                for (var i = 0; i < similarShows.length; i++) {
+                for (var i = 0; i < 3; i++) {
                     var simShowList = similarShows[i].name
                     console.log("SIMILAR TV SHOWS:" + simShowList)
                 }
             });
-        }
+        }     //simShowList displays shows
         )};
     streamingData();
 });
