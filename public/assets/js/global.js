@@ -1,6 +1,11 @@
 // javascript for all pages
 $(document).ready(function () {
-   
+    $.get("/api/user_data").then(function(data) {
+        $(".member-name").text(data.name);
+      console.log(data)
+    });
+    
+
     $("#searchBtn").on("click", function (event) {
         event.preventDefault();
   
@@ -43,6 +48,9 @@ $(document).ready(function () {
                     var simMovieList = similarMovies[i].original_title;
                     console.log("SIMILAR MOVIE: " + simMovieList)
                 }
+
+
+                //simMovieList variable displayer all titles
             });
             const queryUrl3 = "https://api.themoviedb.org/3/tv/" + titleId + "/similar?api_key=" + apiKey + "&language=en-US&page=1";
             // Ajax call to similar tv shows
