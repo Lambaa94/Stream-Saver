@@ -5,8 +5,8 @@ $(document).ready(function() {
     $(".member-name").text(data.name);
   });
 
-  $.get("/api/watchlist").then(function(data){
-    console.log(data)
-    // $(".streams").text(data.title)
-  })
+  // $.get("/api/watchlist").then(function(data){
+  //   console.log(data)
+  //   // $(".streams").text(data.title)
+  // })
 });
