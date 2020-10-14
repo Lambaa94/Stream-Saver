@@ -1,4 +1,3 @@
-// javascript for all pages
 $(document).ready(function () {
    
     // Ajax call to database to get tv show or movie data
@@ -50,5 +49,11 @@ $(document).ready(function () {
         )};
     streamingData();
 
+    // const btn = $("button");
+    // const post = $("#submitRating");
+    // const widget = $(".star-widget");
+    // btn.onclick = ()=>{
+    //     console.log(btn)
+    // }
 });
 

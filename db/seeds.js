@@ -10,31 +10,31 @@ const db = require("../models/")
 // Dropping table - seeding one row of info
 
  db.sequelize.sync({ force: true }).then(() => {
- 	const newExample = {
- 		text: "Test 123",
- 		description: "Testing..."
+ 	const watchList = {
+ 		title: "Schitt's Creek",
+ 		watched: "false"
  	};
 ​
- 	db.Example.create(newExample).then(data => {
+ 	db.watchList.create(watchList).then(data => {
  		console.log(data);
  	});
 
 });
 
 
-const seedArr = [{
-    text: "Test 123",
-    description: "Testing..."
-}, {
-    text: "Testing multiple seeds",
-    description: "dgsdfgdgfhdfgh"
-}, {
-    text: "Lorem",
-    description: "Ipsum"
-}
-];
+// const seedArr = [{
+//     text: "Test 123",
+//     description: "Testing..."
+// }, {
+//     text: "Testing multiple seeds",
+//     description: "dgsdfgdgfhdfgh"
+// }, {
+//     text: "Lorem",
+//     description: "Ipsum"
+// }
+// ];
 
-db.sequelize.sync({ force: true }).then(() => db.Example.bulkCreate(seedArr).then(data => {
+// db.sequelize.sync({ force: true }).then(() => db.Example.bulkCreate(seedArr).then(data => {
     
-    console.log(`Successfully seeded ${data.length} records to the database!`)
-}))
+//     console.log(`Successfully seeded ${data.length} records to the database!`)
+// }))
