@@ -1,26 +1,25 @@
 
         {{!-- Search --}}
-<h6>Start by searching for a show or movie to stream</h6>
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search shows & movies..." aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
+        <h6>Start by searching for a show or movie to stream</h6>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search shows & movies..." aria-label="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
 
 
-<h1>My Watch List</h1>
-{{!-- Watch list cards --}}
-{{!-- <div class="card" style="width: 18rem;">
-  <img src="" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> --}}
+        <h1>My Watch List</h1>
+        {{!-- Watch list cards --}}
+        <div class="card bg-dark text-white">
+          <img class="card-img" src="" alt="Card image">
+          <div class="card-img-overlay">
+            <h5 class="card-title">Show or Movie Title</h5>
+            <p class="card-text"> Seasons</p>
+            <p class="card-text"> Description</p>
+            <a href="#" class="card-link">Where this show or movie is currently streaming</a>
+          </div>
+        </div>
 
-
-<script type="text/javascript" src="/assets/js/index.js"></script>
-  
- 
-
-
+        <script type="text/javascript" src="/assets/js/index.js"></script>
+        
+{{!-- You do not need jquery here as it is in the main hbars --}}
+{{!-- You do not need <body> or <html> tags here as this is the body and html is in main hbars --}}
