@@ -13,11 +13,10 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the posts
-  app.get("/api/watchlists", function(req, res) {
-    
+  app.get("/api/watchlists/:id", function(req, res) {
+     
     db.watchList.findAll({
-        include: [db.Users]
-    //   where: req.params.UserId
+      where: {UserId: req.params.id}
     }).then(function(data) {
     console.log(data, "LOOK HERE")
       res.json(data)
