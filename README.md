@@ -4,7 +4,7 @@
 ## Table of Contents
 * [Screenshots](#screenshots)
 
-* [User Story](#user-stroy)
+* [User Story](#user-story)
 
 * [Application Description](#application-description)
 
@@ -80,27 +80,22 @@ Copyright 2020 ©Ian Fusi, Max Goldstein, Kristy Keller, James Lamb
 
 ## Contributors 
 
-* Ian Fusi 
-Github: [maxgoldstein93](https://github.com/ianf777) 
+Ian Fusi 
+* <p>Github: [ianf777](https://github.com/ianf777) 
 
-* Max Goldstein
-Github: [maxgoldstein93](https://github.com/maxgoldstein93) 
-Email: <magoldstein93@gmail.com>
+ Max Goldstein
+* Github: [maxgoldstein93](https://github.com/maxgoldstein93) 
+* Email: <magoldstein93@gmail.com>
 
 
-* Kristy Keller
-Github: [KristyKeller](https://github.com/KristyKeller)
-Email: <keller.kristy@outlook.com>
+ Kristy Keller
+* Github: [KristyKeller](https://github.com/KristyKeller)
+* Email: <keller.kristy@outlook.com>
 
-* James Lamb
-Github: [Lambaa94](https://github.com/Lambaa94) 
-Email: <jameslamb13@gmail.com>
+James Lamb
+* Github: [Lambaa94](https://github.com/Lambaa94) 
+* Email: <jameslamb13@gmail.com>
 
 ## Questions
 
 If you have any questions regarding this repo, please contact any of the above mentioned contributors via Github or email.
-
-
-
-
-
