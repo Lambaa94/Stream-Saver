@@ -1,4 +1,86 @@
-form.signup,
+body {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background-color: rgb(20, 20, 20);
+  font-style: oblique;
+  color: white;
+  text-shadow: 2px 2px rgba(65, 104, 211);
+}
+
+.navbar-brand {
+  float: left;
+  padding: 15px 15px;
+  font-size: 25px;
+  line-height: 20px;
+  height: 50px;
+}
+
+.navbar-brand:hover {
+  color: white;
+}
+
+.navbar-default {
+  background-color:rgb(20, 20, 20);
+  border-color: rgb(20, 20, 20);
+  box-shadow: 0 5px 15px rgba(65, 104, 211);
+}
+
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+
+.btn-default {
+  color: rgb(255, 255, 255);
+  background-color: rgb(20, 20, 20);
+  box-shadow: 0 5px 15px rgba(65, 104, 211);
+  border-color: rgb(20, 20, 20);
+}
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
 form.login {
-  margin-top: 50px;
+  margin-top: 10px;
+  background-color: black;
+}
+
+}
+button.btn.btn-default:hover {
+ color: rgb(65, 104, 211);
+ box-shadow: 0 5px 15px rgba(65, 104, 211)
+}
+
+#email-input {
+  box-shadow: 0 5px 15px rgba(65, 104, 211);
+}
+
+#email-input:focus {
+  color: rgb(0, 0, 0);
+  box-shadow: 0 3px 7px rgb(255, 255, 255);
+}
+
+#password-input {
+  box-shadow: 0 5px 15px rgba(65, 104, 211);
+}
+
+#password-input:focus {
+  color: rgb(0, 0, 0);
+  box-shadow: 0 5px 15px rgb(255, 255, 255);
+}
+
+}
+a.navbar-brand:hover {
+  color: rgb(65, 104, 211);
+  box-shadow: 0 3px 7px rgba(65, 104, 211);
+}
+
+.h2 {
+  font-weight: bolder;
 }
