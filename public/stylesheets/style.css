@@ -75,6 +75,15 @@ button.btn.btn-default:hover {
   box-shadow: 0 5px 15px rgb(255, 255, 255);
 }
 
+#name-input {
+  box-shadow: 0 5px 15px rgba(65, 104, 211);
+}
+
+#name-input:focus {
+  color: rgb(0, 0, 0);
+  box-shadow: 0 5px 15px rgb(255, 255, 255);
+}
+
 }
 a.navbar-brand:hover {
   color: rgb(65, 104, 211);
@@ -99,6 +108,45 @@ a.navbar-brand:hover {
 #member-login {
   font-size: 20px;
   text-align: center;
-  margin-top: -5px;
-  
+  margin-top: -5px;  
+}
+
+.navbar-brand {
+  color: white;
+}
+
+.jumbotron h1, .jumbotron .h1 {
+  color:  rgb(20, 20, 20);
+}
+
+h3, .h3 {
+  font-size: 24px;
+  color: rgb(20, 20, 20); ;
+}
+
+#started {
+  color: rgb(20, 20, 20); ;
+  text-shadow: none;
+  font-weight: bolder;
+}
+
+#signin {
+  color: rgb(20, 20, 20); ;
+  text-shadow: none;
+  font-weight: bolder;
+}
+
+#signup {
+  color: rgb(20, 20, 20); ;
+  text-shadow: none;
+  font-weight: bolder;
+}
+
+img {
+  vertical-align: middle;
+  display: block;
+  height: 300px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
