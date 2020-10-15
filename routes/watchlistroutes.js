@@ -13,7 +13,7 @@ var db = require("../models");
 module.exports = function (app) {
 
     // GET route for getting all of the posts
-    app.get("/api/watchlists/", isAuthenticated, function (req, res) {
+    app.get("/api/watchlists", isAuthenticated, function (req, res) {
         if (req.user) {
 
             db.watchList.findAll({
@@ -29,7 +29,9 @@ module.exports = function (app) {
 
     // POST route for saving a new post
     app.post("/api/watchlists", isAuthenticated, function (req, res) {
+        console.log("IS AUTHENTIC")
         db.watchList.create(req.body).then(function (dbwatchlist) {
+            console.log("I AM WORKING")
             res.json(dbwatchlist);
         });
     });
