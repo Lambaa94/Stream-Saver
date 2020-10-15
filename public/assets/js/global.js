@@ -14,58 +14,60 @@ $(document).ready(function () {
         const searchItem = $("#searchText").val()
 
         // When Adding Movie to Watchlist
-        $(document).on('click', '.addMovie', function(event){
+        $(document).on('click', '.addMovie', function (event) {
             event.preventDefault()
             console.log("ADDING NEW MOVIE")
-            newTitle = {title: streamTitle, rating: rating,
-            poster: poster, date: releaseDate }
+            newTitle = {
+                title: streamTitle, rating: rating,
+                poster: fullPosterURL, date: releaseDate
+            }
             $.ajax("api/watchlists/", {
                 method: "POST",
                 data: newTitle
-            }).then(function() {
+            }).then(function () {
                 console.log("Movie has been added!")
                 window.location = "/watchlist"
             })
-          });
-          $(document).on('click', '.addShow', function(event){
+        });
+        $(document).on('click', '.addShow', function (event) {
             event.preventDefault()
-            
+
             console.log(" ADDING NEW SHOW")
-          });
-          $(document).on('click', '#1', function(event){
+        });
+        $(document).on('click', '#1', function (event) {
             event.preventDefault()
-            
+
             console.log("ADDING NEW SIM MOVIE-1")
-          });
-          $(document).on('click', '#2', function(event){
+        });
+        $(document).on('click', '#2', function (event) {
             event.preventDefault()
-            
+
             console.log("ADDING NEW SIM MOVIE-2")
-          });
-          $(document).on('click', '#3', function(event){
+        });
+        $(document).on('click', '#3', function (event) {
             event.preventDefault()
-            
+
             console.log("ADDING NEW SIM MOVIE-3")
-          });
-          $(document).on('click', '#4', function(event){
+        });
+        $(document).on('click', '#4', function (event) {
             event.preventDefault()
-            
+
             console.log("ADDING NEW SIM SHOW-1")
-          });
-          $(document).on('click', '#5', function(event){
+        });
+        $(document).on('click', '#5', function (event) {
             event.preventDefault()
-            
+
             console.log("ADDING NEW SIM SHOW-2")
-          });
-          $(document).on('click', '#6', function(event){
+        });
+        $(document).on('click', '#6', function (event) {
             event.preventDefault()
-            
+
             console.log("ADDING NEW SIM SHOW-3")
-          });
+        });
 
         // Ajax call to database to get tv show or movie data
         function streamingData() {
-            
+
             let Title = searchItem
             Title = Title.replace(/ /g, '+');
             const apiKey = "436032d6749a29a57b3c39ae36df859d"
@@ -84,6 +86,7 @@ $(document).ready(function () {
                 mediaType = titleData.results[0].media_type;
                 releaseDate = titleData.results[0].release_date;
                 poster = titleData.results[0].poster_path
+                fullPosterURL = "http://image.tmdb.org/t/p/original" + poster
                 // Showing Id of movie and title
                 console.log("Movie/Show ID: " + titleId)
                 console.log("Searched Movie/Show: " + Title)
@@ -91,73 +94,78 @@ $(document).ready(function () {
                 streamTvTitle = titleData.results[0].original_name;
                 showRating = titleData.results[0].vote_average;
                 firstAirDate = titleData.results[0].first_air_date;
-                var lineBreak = $("<br>")
+
                 // Adding Searched Movie Card to html page
-                function movieStream() {    
-                var newDiv = $("<div>")
-                newDiv.addClass("card")
-                newDiv.attr("style", "width: 40rem")
-                var nextDiv = $("<div>")
-                nextDiv.addClass("card-body")
-                newDiv.append(nextDiv)
-                var newTitle = $("<h5>")
-                newTitle.addClass("card-title")
-                newTitle.attr("id", "movieTitle")
-                newTitle.text("Original Title: " + streamTitle)
-                nextDiv.append(newTitle)
-                var moviePoster = $("<img>")
-                moviePoster.attr("src", "http://image.tmdb.org/t/p/original" + poster)
-                moviePoster.attr("alt", "Movie Poster")
-                newDiv.append(moviePoster)
-                var newReleaseDate = $("<h6>")
-                newReleaseDate.addClass("card-subtitle text-muted")
-                newReleaseDate.text("Release Date: " + releaseDate)
-                newReleaseDate.attr("style", "color: white")
-                newDiv.append(newReleaseDate)
-                var newRating = $("<p>")
-                newRating.addClass("card-text")
-                newRating.text("Rating: " + rating)
-                newReleaseDate.append(newRating)
-                var addWatchList = $("<button>")
-                addWatchList.text("Add To Watchlist")
-                addWatchList.addClass("addMovie")
-                addWatchList.attr("id", "Add1")
-                newDiv.append(addWatchList)
-                $(".streamMovieInfo").html(newDiv)
+                function movieStream() {
+                    var newDiv = $("<div>")
+                    newDiv.addClass("card")
+                    newDiv.attr("style", "width: 40rem")
+                    var nextDiv = $("<div>")
+                    nextDiv.addClass("card-body")
+                    newDiv.append(nextDiv)
+                    var newTitle = $("<h5>")
+                    newTitle.addClass("card-title")
+                    newTitle.attr("id", "movieTitle")
+                    newTitle.text("Original Title: " + streamTitle)
+                    nextDiv.append(newTitle)
+                    var moviePoster = $("<img>")
+                    moviePoster.attr("src", "http://image.tmdb.org/t/p/original" + poster)
+                    moviePoster.attr("alt", "Movie Poster")
+                    newDiv.append(moviePoster)
+                    var newReleaseDate = $("<h6>")
+                    newReleaseDate.addClass("card-subtitle text-muted")
+                    newReleaseDate.text("Release Date: " + releaseDate)
+                    newReleaseDate.attr("style", "color: white")
+                    newDiv.append(newReleaseDate)
+                    var newRating = $("<p>")
+                    newRating.addClass("card-text")
+                    newRating.text("Rating: " + rating)
+                    newReleaseDate.append(newRating)
+                    var addWatchList = $("<button>")
+                    addWatchList.text("Add To Watchlist")
+                    addWatchList.addClass("addMovie")
+                    addWatchList.attr("id", "Add1")
+                    newDiv.append(addWatchList)
+                    $(".streamMovieInfo").html(newDiv)
                 }
                 // Adding Searched Show Card to html page
-                function tvStream(){
-                var tvDiv = $("<div>")
-                tvDiv.addClass("card")
-                tvDiv.attr("style", "width: 18rem")
-                var newerDiv = $("<div>")
-                newerDiv.addClass("card-body")
-                tvDiv.append(newerDiv)
-                var tvTitle = $("<h5>")
-                tvTitle.addClass("card-title")
-                tvTitle.text("Show Title: " + streamTvTitle)
-                newerDiv.append(tvTitle)
-                var newfirstAirDate = $("<h6>")
-                newfirstAirDate.addClass("card-subtitle mb-2 text-muted")
-                newfirstAirDate.text("First Aired: " + firstAirDate)
-                tvTitle.append(newfirstAirDate)
-                var tvRating = $("<p>")
-                tvRating.addClass("card-text")
-                tvRating.text("Rating: " + showRating)
-                newfirstAirDate.append(tvRating)
-                var addTvWatchList = $("<button>")
-                addTvWatchList.addClass("addShow")
-                addTvWatchList.text("Add To Watchlist")
-                tvDiv.append(addTvWatchList)
-                $(".streamTvInfo").html(tvDiv)
+                function tvStream() {
+                    var tvDiv = $("<div>")
+                    tvDiv.addClass("card")
+                    tvDiv.attr("style", "width: 200rem")
+                    var newerDiv = $("<div>")
+                    newerDiv.addClass("card-body")
+                    tvDiv.append(newerDiv)
+                    var tvTitle = $("<h5>")
+                    tvTitle.addClass("card-title")
+                    tvTitle.text("Show Title: " + streamTvTitle)
+                    newerDiv.append(tvTitle)
+                    var showPoster = $("<img>")
+                    showPoster.attr("src", "http://image.tmdb.org/t/p/original" + poster)
+                    showPoster.attr("alt", "Show Poster")
+                    tvDiv.append(showPoster)
+                    var newfirstAirDate = $("<h6>")
+                    newfirstAirDate.addClass("card-subtitle mb-2 text-muted")
+                    newfirstAirDate.attr("style", "color: white")
+                    newfirstAirDate.text("First Aired: " + firstAirDate)
+                    tvDiv.append(newfirstAirDate)
+                    var tvRating = $("<p>")
+                    tvRating.addClass("card-text")
+                    tvRating.text("Rating: " + showRating)
+                    newfirstAirDate.append(tvRating)
+                    var addTvWatchList = $("<button>")
+                    addTvWatchList.addClass("addShow")
+                    addTvWatchList.text("Add To Watchlist")
+                    tvDiv.append(addTvWatchList)
+                    $(".streamTvInfo").html(tvDiv)
                 }
                 // Will decide on what search to execute
-                if (mediaType === "tv"){
+                if (mediaType === "tv") {
                     tvStream();
                 } else {
                     movieStream();
                 }
-                
+
                 // Ajax call to get similar movies
                 const queryUrl2 = "https://api.themoviedb.org/3/movie/" + titleId + "/similar?api_key=" + apiKey + "&language=en-US&page=1"
                 $.ajax({
@@ -173,33 +181,38 @@ $(document).ready(function () {
                         console.log("SIMILAR MOVIE: " + simMovieList)
                     }
                     
-            //  Adding Sim Searched Movie Card to html page
+                    //  Adding Sim Searched Movie Card to html page
                     for (var i = 1; i < 4; i++) {
-                    var simMovie = $("<div>")
-                    simMovie.addClass("card")
-                    simMovie.attr("style", "width: 18rem")
-                    var div2 = $("<div>")
-                    div2.addClass("card-body")
-                    simMovie.append(div2)
-                    var simTitle = $("<h5>")
-                    simTitle.addClass("card-title")
-                    simTitle.text("Movie Title: " + similarMovies[i].original_title)
-                    div2.append(simTitle)
-                    var simRelease = $("<h6>")
-                    simRelease.addClass("card-subtitle mb-2 text-muted")
-                    simRelease.text("Release Date: " + similarMovies[i].release_date)
-                    simTitle.append(simRelease)
-                    var simRating = $("<p>")
-                    simRating.addClass("card-text")
-                    simRating.text("Rating: " + similarMovies[i].vote_average)
-                    simRelease.append(simRating)
-                    var simButton = $("<button>")
-                    simButton.text("Add To Watchlist")
-                    simButton.attr("id",[i])
-                    simMovie.append(simButton)
-                    $(".relatedMovies").append(simMovie)
+                        var simMovie = $("<div>")
+                        simMovie.addClass("card")
+                        simMovie.attr("style", "width: 40rem")
+                        var div2 = $("<div>")
+                        div2.addClass("card-body")
+                        simMovie.append(div2)
+                        var simTitle = $("<h5>")
+                        simTitle.addClass("card-title")
+                        simTitle.text("Movie Title: " + similarMovies[i].original_title)
+                        div2.append(simTitle)
+                        var simMoviePoster = $("<img>")
+                        simMoviePoster.attr("src", "http://image.tmdb.org/t/p/original" + similarMovies[i].poster_path)
+                        simMoviePoster.attr("alt", "Movie Poster")
+                        simMovie.append(simMoviePoster)
+                        var simRelease = $("<h6>")
+                        simRelease.addClass("card-subtitle mb-2 text-muted")
+                        simRelease.attr("style", "color: white")
+                        simRelease.text("Release Date: " + similarMovies[i].release_date)
+                        simMovie.append(simRelease)
+                        var simRating = $("<p>")
+                        simRating.addClass("card-text")
+                        simRating.text("Rating: " + similarMovies[i].vote_average)
+                        simRelease.append(simRating)
+                        var simButton = $("<button>")
+                        simButton.text("Add To Watchlist")
+                        simButton.attr("id", [i])
+                        simMovie.append(simButton)
+                        $(".relatedMovies").append(simMovie)
                     }
-                
+
                 });
                 // Ajax call for similar shows
                 const queryUrl3 = "https://api.themoviedb.org/3/tv/" + titleId + "/similar?api_key=" + apiKey + "&language=en-US&page=1";
@@ -208,10 +221,10 @@ $(document).ready(function () {
                     url: queryUrl3,
                     method: "GET"
                 }).then(function (similarShowData) {
-                    
-                   
+
+
                     let similarShows = similarShowData.results
-                    
+
                     // loop through the similar show lsit to display all titles
                     for (var i = 0; i < 3; i++) {
                         var simShowList = similarShows[i].name
@@ -221,7 +234,7 @@ $(document).ready(function () {
                     for (var i = 4; i < 7; i++) {
                         var simShow = $("<div>")
                         simShow.addClass("card")
-                        simShow.attr("style", "width: 18rem")
+                        simShow.attr("style", "width: 200rem")
                         var div3 = $("<div>")
                         div3.addClass("card-body")
                         simShow.append(div3)
@@ -229,10 +242,15 @@ $(document).ready(function () {
                         showTitle.addClass("card-title")
                         showTitle.text("Show Title: " + similarShows[i].original_name)
                         div3.append(showTitle)
+                        var simShowPoster = $("<img>")
+                        simShowPoster.attr("src", "http://image.tmdb.org/t/p/original" + similarShows[i].poster_path)
+                        simShowPoster.attr("alt", "Movie Poster")
+                        simShow.append(simShowPoster)
                         var firstAired = $("<h6>")
                         firstAired.addClass("card-subtitle mb-2 text-muted")
-                        firstAired.text("Release Date: " + similarShows[i].first_air_date)
-                        showTitle.append(firstAired)
+                        firstAired.attr("style", "color: white")
+                        firstAired.text("First Aired: " + similarShows[i].first_air_date)
+                        simShow.append(firstAired)
                         var showRating = $("<p>")
                         showRating.addClass("card-text")
                         showRating.text("Rating: " + similarShows[i].vote_average)
@@ -242,11 +260,11 @@ $(document).ready(function () {
                         showBtn.attr("id", [i])
                         simShow.append(showBtn)
                         $(".relatedStreams").append(simShow)
-                        }
+                    }
 
 
                 });
-            }     
+            }
             )
         };
         streamingData();
