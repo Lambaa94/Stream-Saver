@@ -60,7 +60,8 @@ $(document).ready(function () {
                 newDiv.append(nextDiv)
                 var newTitle = $("<h5>")
                 newTitle.addClass("card-title")
-                newTitle.text("Movie Title: " + streamTitle)
+                newTitle.attr("id", "movieTitle")
+                newTitle.text(streamTitle)
                 nextDiv.append(newTitle)
                 var newReleaseDate = $("<h6>")
                 newReleaseDate.addClass("card-subtitle mb-2 text-muted")
@@ -72,7 +73,7 @@ $(document).ready(function () {
                 newReleaseDate.append(newRating)
                 var addWatchList = $("<button>")
                 addWatchList.text("Add To Watchlist")
-                addWatchList.addClass("addToWatchList")
+                addWatchList.addClass("addMovie")
                 addWatchList.attr("id", "Add1")
                 newDiv.append(addWatchList)
                 $(".streamMovieInfo").html(newDiv)
@@ -97,7 +98,7 @@ $(document).ready(function () {
                 tvRating.text("Rating: " + showRating)
                 newfirstAirDate.append(tvRating)
                 var addTvWatchList = $("<button>")
-                addTvWatchList.addClass("addToWatchList")
+                addTvWatchList.addClass("addShow")
                 addTvWatchList.text("Add To Watchlist")
                 tvDiv.append(addTvWatchList)
                 $(".streamTvInfo").html(tvDiv)
@@ -125,7 +126,7 @@ $(document).ready(function () {
                     }
                     
             
-                    for (var i = 0; i < 3; i++) {
+                    for (var i = 1; i < 4; i++) {
                     var simMovie = $("<div>")
                     simMovie.addClass("card")
                     simMovie.attr("style", "width: 18rem")
@@ -146,7 +147,7 @@ $(document).ready(function () {
                     simRelease.append(simRating)
                     var simButton = $("<button>")
                     simButton.text("Add To Watchlist")
-                    simButton.addClass("addToWatchList")
+                    simButton.attr("id",[i])
                     simMovie.append(simButton)
                     $(".relatedMovies").append(simMovie)
                     }
@@ -161,14 +162,14 @@ $(document).ready(function () {
                     // variable directly to show titles 
                    
                     let similarShows = similarShowData.results
-                    console.log(similarShows)
+                    
                     // loop through the similar show lsit to display all titles
                     for (var i = 0; i < 3; i++) {
                         var simShowList = similarShows[i].name
                         console.log("SIMILAR TV SHOWS:" + simShowList)
                     }
 
-                    for (var i = 0; i < 3; i++) {
+                    for (var i = 4; i < 7; i++) {
                         var simShow = $("<div>")
                         simShow.addClass("card")
                         simShow.attr("style", "width: 18rem")
@@ -189,7 +190,7 @@ $(document).ready(function () {
                         firstAired.append(showRating)
                         var showBtn = $("<button>")
                         showBtn.text("Add To Watchlist")
-                        showBtn.addClass("addToWatchList")
+                        showBtn.attr("id", [i])
                         simShow.append(showBtn)
                         $(".relatedStreams").append(simShow)
                         }
