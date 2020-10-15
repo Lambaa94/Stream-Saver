@@ -94,3 +94,10 @@ a.navbar-brand:hover {
   color: white;
   text-align: center;
 }
+
+#member-login {
+  font-size: 20px;
+  text-align: center;
+  margin-top: -5px;
+  border: solid 2px black;
+}
