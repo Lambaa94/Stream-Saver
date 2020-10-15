@@ -1,5 +1,6 @@
 //REPLACED PATH WITH HANDLEBARS
 // var path = require("path");
+var db = require("../models");
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -39,7 +40,19 @@ module.exports = function(app) {
   // The Main page of the application
   app.get("/watchlist", isAuthenticated, function(req, res) {
    
-    res.render("index")
+    if (req.user) {
+
+      db.watchList.findAll({
+          raw: true,
+          where: { UserId: req.user.id }
+      }).then(function (movieData) {
+          console.log(movieData, "LOOK HERE")
+          // res.json(data)
+          res.render("index", {movies: movieData})
+
+      });
+  }else{res.json({})};
     
   });
+
 };

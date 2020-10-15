@@ -73,6 +73,7 @@ $(document).ready(function () {
                 var addWatchList = $("<button>")
                 addWatchList.text("Add To Watchlist")
                 addWatchList.addClass("addToWatchList")
+                addWatchList.attr("id", "Add1")
                 newDiv.append(addWatchList)
                 $(".streamMovieInfo").html(newDiv)
                 }
