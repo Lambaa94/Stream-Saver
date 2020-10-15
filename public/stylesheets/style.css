@@ -84,3 +84,14 @@ a.navbar-brand:hover {
 .h2 {
   font-weight: bolder;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(20, 20, 20);
+  box-shadow: 0 3px 7px rgba(65, 104, 211);
+  color: white;
+  text-align: center;
+}
