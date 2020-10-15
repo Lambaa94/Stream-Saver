@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-6 col-md-offset-1">
       {{!-- Member Name --}}
       <h2>Welcome <span class="member-name">{{ name }}</span></h2>
     </div>
@@ -8,29 +8,28 @@
 </div>
 </div>
 
-<form class="form-inline">
-  <input id="searchText"class="form-control mr-sm-2" type="search" placeholder="Search shows & movies..." aria-label="Search">
+<form class="form-inline justify-content-center">
+  <input id="searchText" class="form-control mr-3" type="search" placeholder="Search shows & movies..."
+    aria-label="Search">
   <button id="searchBtn" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
 </form>
 
+
 <div class="row">
-  <div class="col-6">
-    <h3 class="streamTitles border border-primary rounded-pill text-center">Save Your Stream Here!</h3>
-    <ol>
-      
-      <section class="row mb-1 pb-1">
-        <section class="col-6 float-left">
-          <li class="streamInfo text-center">{{ titleId }}</li>
-        </section>
-        <section class="col-6 float-right">
-          <button type="buton" class="btn btn-secondary btn-lg">Add to My Watch List</button>
-        </section>
+  <div class="col">
+    <h3 class="streamTitles border border-primary rounded-pill text-center">Save Your Stream Here!<h3>
 
-
-       
-    </ol>
+        <section class="row">
+          <section class="col-6">
+            <p class="streamMovieInfo"></p>
+          </section>
+        
+        <section class="col-6">
+          <p class="streamTvInfo"></p>
+        </section>
+        </section>
   </div>
-
+</div>
 
 
 
