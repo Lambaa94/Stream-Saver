@@ -33,12 +33,19 @@ $(document).ready(function () {
             event.preventDefault()
 
             console.log(" ADDING NEW SHOW")
+            newTitle = {
+                title: streamTvTitle, rating: showRating,
+                poster: fullPosterURL, date: firstAirDate
+            }
+            $.ajax("api/watchlists/", {
+                method: "POST",
+                data: newTitle
+            }).then(function () {
+                console.log("Show has been added!")
+                window.location = "/watchlist"
+            })
         });
-        $(document).on('click', '#1', function (event) {
-            event.preventDefault()
-
-            console.log("ADDING NEW SIM MOVIE-1")
-        });
+        
         $(document).on('click', '#2', function (event) {
             event.preventDefault()
 
@@ -165,7 +172,7 @@ $(document).ready(function () {
                 } else {
                     movieStream();
                 }
-
+                
                 // Ajax call to get similar movies
                 const queryUrl2 = "https://api.themoviedb.org/3/movie/" + titleId + "/similar?api_key=" + apiKey + "&language=en-US&page=1"
                 $.ajax({
@@ -181,6 +188,29 @@ $(document).ready(function () {
                         console.log("SIMILAR MOVIE: " + simMovieList)
                     }
                     
+                    $(document).on('click', '#1', function (event) {
+                        event.preventDefault()
+            
+                        console.log("ADDING NEW SIM MOVIE-1")
+                        newTitle = {
+                            title: simMovie1, rating: simRating1,
+                            poster: simPoster1, date: simDate1
+                        }
+                        $.ajax("api/watchlists/", {
+                            method: "POST",
+                            data: newTitle
+                        }).then(function () {
+                            console.log("Movie has been added!")
+                            window.location = "/watchlist"
+                        })
+            
+                    });
+                    var simMovie1 = similarMovies[1].original_title
+                    var simPoster1 = "http://image.tmdb.org/t/p/original" + similarMovies[1].poster_path
+                    var simDate1 = similarMovies[1].release_date
+                    var simRating1 = similarMovies[i].vote_average
+                   
+
                     //  Adding Sim Searched Movie Card to html page
                     for (var i = 1; i < 4; i++) {
                         var simMovie = $("<div>")
