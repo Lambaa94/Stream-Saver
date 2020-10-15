@@ -83,7 +83,7 @@ $(document).ready(function () {
                 rating = titleData.results[0].vote_average;
                 mediaType = titleData.results[0].media_type;
                 releaseDate = titleData.results[0].release_date;
-                poster = titleData.results[0].poster
+                poster = titleData.results[0].poster_path
                 // Showing Id of movie and title
                 console.log("Movie/Show ID: " + titleId)
                 console.log("Searched Movie/Show: " + Title)
@@ -91,24 +91,29 @@ $(document).ready(function () {
                 streamTvTitle = titleData.results[0].original_name;
                 showRating = titleData.results[0].vote_average;
                 firstAirDate = titleData.results[0].first_air_date;
-                
+                var lineBreak = $("<br>")
                 // Adding Searched Movie Card to html page
                 function movieStream() {    
                 var newDiv = $("<div>")
                 newDiv.addClass("card")
-                newDiv.attr("style", "width: 18rem")
+                newDiv.attr("style", "width: 40rem")
                 var nextDiv = $("<div>")
                 nextDiv.addClass("card-body")
                 newDiv.append(nextDiv)
                 var newTitle = $("<h5>")
                 newTitle.addClass("card-title")
                 newTitle.attr("id", "movieTitle")
-                newTitle.text("Movie Title: " + streamTitle)
+                newTitle.text("Original Title: " + streamTitle)
                 nextDiv.append(newTitle)
+                var moviePoster = $("<img>")
+                moviePoster.attr("src", "http://image.tmdb.org/t/p/original" + poster)
+                moviePoster.attr("alt", "Movie Poster")
+                newDiv.append(moviePoster)
                 var newReleaseDate = $("<h6>")
-                newReleaseDate.addClass("card-subtitle mb-2 text-muted")
+                newReleaseDate.addClass("card-subtitle text-muted")
                 newReleaseDate.text("Release Date: " + releaseDate)
-                newTitle.append(newReleaseDate)
+                newReleaseDate.attr("style", "color: white")
+                newDiv.append(newReleaseDate)
                 var newRating = $("<p>")
                 newRating.addClass("card-text")
                 newRating.text("Rating: " + rating)
