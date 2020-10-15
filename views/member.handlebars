@@ -1,9 +1,54 @@
 <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2 id="member-login">Welcome <span class="member-name">{{ memberName }}</span></h2>
-      </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-1">
+      {{!-- Member Name --}}
+      <h2>Welcome <span class="member-name">{{ name }}</span></h2>
     </div>
   </div>
+</div>
+</div>
 
-   <script type="text/javascript" src="/assets/js/members.js"></script>
+<form class="form-inline justify-content-center">
+  <input id="searchText" class="form-control mr-3" type="search" placeholder="Search shows & movies..."
+    aria-label="Search">
+  <button id="searchBtn" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+
+<div class="row">
+  <div class="col">
+    <h3 class="streamTitles text-center">Save Your Stream Here!<h3>
+
+        <section class="row">
+          <section class="col-6">
+            <p class="streamMovieInfo"></p>
+          </section>
+
+          <section class="col-6">
+            <p class="streamTvInfo"></p>
+          </section>
+        </section>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <h3 class="similarTitles  text-center">Related Streams<h3>
+
+        <section class="row">
+          <section class="col-6">
+            <p class="relatedMovies"></p>
+          </section>
+
+          <section class="col-6">
+            <p class="relatedStreams"></p>
+          </section>
+        </section>
+  </div>
+</div>
+
+
+
+
+{{!-- You do not need jquery here as it is in the main hbars --}}
+{{!-- You do not need <body> or <html> tags here as this is the body and html is in main hbars --}}
