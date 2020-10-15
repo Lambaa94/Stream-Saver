@@ -46,32 +46,7 @@ $(document).ready(function () {
             })
         });
         
-        $(document).on('click', '#2', function (event) {
-            event.preventDefault()
-
-            console.log("ADDING NEW SIM MOVIE-2")
-        });
-        $(document).on('click', '#3', function (event) {
-            event.preventDefault()
-
-            console.log("ADDING NEW SIM MOVIE-3")
-        });
-        $(document).on('click', '#4', function (event) {
-            event.preventDefault()
-
-            console.log("ADDING NEW SIM SHOW-1")
-        });
-        $(document).on('click', '#5', function (event) {
-            event.preventDefault()
-
-            console.log("ADDING NEW SIM SHOW-2")
-        });
-        $(document).on('click', '#6', function (event) {
-            event.preventDefault()
-
-            console.log("ADDING NEW SIM SHOW-3")
-        });
-
+        
         // Ajax call to database to get tv show or movie data
         function streamingData() {
 
@@ -205,10 +180,51 @@ $(document).ready(function () {
                         })
             
                     });
+                    $(document).on('click', '#2', function (event) {
+                        event.preventDefault()
+            
+                        console.log("ADDING NEW SIM MOVIE-2")
+                        newTitle = {
+                            title: simMovie2, rating: simRating2,
+                            poster: simPoster2, date: simDate2
+                        }
+                        $.ajax("api/watchlists/", {
+                            method: "POST",
+                            data: newTitle
+                        }).then(function () {
+                            console.log("Movie has been added!")
+                            window.location = "/watchlist"
+                        })
+                    });
+                    $(document).on('click', '#3', function (event) {
+                        event.preventDefault()
+            
+                        console.log("ADDING NEW SIM MOVIE-3")
+                        newTitle = {
+                            title: simMovie3, rating: simRating3,
+                            poster: simPoster3, date: simDate3
+                        }
+                        $.ajax("api/watchlists/", {
+                            method: "POST",
+                            data: newTitle
+                        }).then(function () {
+                            console.log("Movie has been added!")
+                            window.location = "/watchlist"
+                        })
+                    });
+                    
                     var simMovie1 = similarMovies[1].original_title
                     var simPoster1 = "http://image.tmdb.org/t/p/original" + similarMovies[1].poster_path
                     var simDate1 = similarMovies[1].release_date
-                    var simRating1 = similarMovies[i].vote_average
+                    var simRating1 = similarMovies[1].vote_average
+                    var simMovie2 = similarMovies[2].original_title
+                    var simPoster2 = "http://image.tmdb.org/t/p/original" + similarMovies[2].poster_path
+                    var simDate2 = similarMovies[2].release_date
+                    var simRating2 = similarMovies[2].vote_average
+                    var simMovie3 = similarMovies[3].original_title
+                    var simPoster3 = "http://image.tmdb.org/t/p/original" + similarMovies[3].poster_path
+                    var simDate3 = similarMovies[3].release_date
+                    var simRating3 = similarMovies[3].vote_average
                    
 
                     //  Adding Sim Searched Movie Card to html page
@@ -244,6 +260,7 @@ $(document).ready(function () {
                     }
 
                 });
+
                 // Ajax call for similar shows
                 const queryUrl3 = "https://api.themoviedb.org/3/tv/" + titleId + "/similar?api_key=" + apiKey + "&language=en-US&page=1";
                 // Ajax call to similar tv shows
@@ -260,6 +277,68 @@ $(document).ready(function () {
                         var simShowList = similarShows[i].name
                         console.log("SIMILAR TV SHOWS:" + simShowList)
                     }
+
+                    $(document).on('click', '#4', function (event) {
+                        event.preventDefault()
+            
+                        console.log("ADDING NEW SIM SHOW-1")
+                        newTitle = {
+                            title: simShow1, rating: simShowRating1,
+                            poster: simShowPoster1, date: simShowDate1
+                        }
+                        $.ajax("api/watchlists/", {
+                            method: "POST",
+                            data: newTitle
+                        }).then(function () {
+                            console.log("Movie has been added!")
+                            window.location = "/watchlist"
+                        })
+                    });
+                    $(document).on('click', '#5', function (event) {
+                        event.preventDefault()
+            
+                        console.log("ADDING NEW SIM SHOW-2")
+                        newTitle = {
+                            title: simShow2, rating: simShowRating2,
+                            poster: simShowPoster2, date: simShowDate2
+                        }
+                        $.ajax("api/watchlists/", {
+                            method: "POST",
+                            data: newTitle
+                        }).then(function () {
+                            console.log("Movie has been added!")
+                            window.location = "/watchlist"
+                        })
+                    });
+                    $(document).on('click', '#6', function (event) {
+                        event.preventDefault()
+            
+                        console.log("ADDING NEW SIM SHOW-3")
+                        newTitle = {
+                            title: simShow3, rating: simShowRating3,
+                            poster: simShowPoster3, date: simShowDate3
+                        }
+                        $.ajax("api/watchlists/", {
+                            method: "POST",
+                            data: newTitle
+                        }).then(function () {
+                            console.log("Movie has been added!")
+                            window.location = "/watchlist"
+                        })
+                    });
+                    var simShow1 = similarShows[4].original_name
+                    var simShowRating1 = similarShows[4].vote_average
+                    var simShowPoster1 = "http://image.tmdb.org/t/p/original" + similarShows[4].poster_path
+                    var simShowDate1 = similarShows[4].first_air_date
+                    var simShow2 = similarShows[5].original_name
+                    var simShowRating2 = similarShows[5].vote_average
+                    var simShowPoster2 = "http://image.tmdb.org/t/p/original" + similarShows[5].poster_path
+                    var simShowDate2 = similarShows[5].first_air_date
+                    var simShow3 = similarShows[6].original_name
+                    var simShowRating3 = similarShows[6].vote_average
+                    var simShowPoster3 = "http://image.tmdb.org/t/p/original" + similarShows[6].poster_path
+                    var simShowDate3 = similarShows[6].first_air_date
+                    
 
                     for (var i = 4; i < 7; i++) {
                         var simShow = $("<div>")
