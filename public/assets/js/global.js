@@ -1,4 +1,3 @@
-
 // javascript for all pages
 $(document).ready(function () {
     $.get("/api/user_data").then(function (data) {
@@ -6,25 +5,20 @@ $(document).ready(function () {
 
     });
 
-    
+    //Search Button
     $("#searchBtn").on("click", function (event) {
         event.preventDefault();
         $(".relatedStreams").empty()
         $(".relatedMovies").empty()
-        
+        //Grabbing the user input
         const searchItem = $("#searchText").val()
 
-        console.log(searchItem)
-        
-
-
-
+        // When Adding Movie to Watchlist
         $(document).on('click', '.addMovie', function(event){
             event.preventDefault()
-            // console.log(" ADDING NEW MOVIE")
-            console.log(streamTitle) 
-            var newTitle = {title: streamTitle,
-            UserId: 1 }
+            console.log("ADDING NEW MOVIE")
+            newTitle = {title: streamTitle, rating: rating,
+            poster: poster, date: releaseDate }
             $.ajax("api/watchlists/", {
                 method: "POST",
                 data: newTitle
@@ -71,7 +65,7 @@ $(document).ready(function () {
 
         // Ajax call to database to get tv show or movie data
         function streamingData() {
-            // Hardcoded title of tv shor or movie
+            
             let Title = searchItem
             Title = Title.replace(/ /g, '+');
             const apiKey = "436032d6749a29a57b3c39ae36df859d"
@@ -84,24 +78,21 @@ $(document).ready(function () {
             }).then(function (titleData) {
                 console.log(titleData)
                 titleId = titleData.results[0].id;
+                // Pulling info for searched Movie
                 streamTitle = titleData.results[0].original_title;
                 rating = titleData.results[0].vote_average;
                 mediaType = titleData.results[0].media_type;
                 releaseDate = titleData.results[0].release_date;
+                poster = titleData.results[0].poster
+                // Showing Id of movie and title
                 console.log("Movie/Show ID: " + titleId)
                 console.log("Searched Movie/Show: " + Title)
-                console.log(titleId)
-                console.log(streamTitle)
-                console.log(rating)
-                console.log(mediaType)
+                //Pulling info for searched tv
                 streamTvTitle = titleData.results[0].original_name;
                 showRating = titleData.results[0].vote_average;
                 firstAirDate = titleData.results[0].first_air_date;
-                console.log(streamTvTitle)
-                console.log(showRating)
-                console.log(firstAirDate)
                 
-                
+                // Adding Searched Movie Card to html page
                 function movieStream() {    
                 var newDiv = $("<div>")
                 newDiv.addClass("card")
@@ -112,7 +103,7 @@ $(document).ready(function () {
                 var newTitle = $("<h5>")
                 newTitle.addClass("card-title")
                 newTitle.attr("id", "movieTitle")
-                newTitle.text(streamTitle)
+                newTitle.text("Movie Title: " + streamTitle)
                 nextDiv.append(newTitle)
                 var newReleaseDate = $("<h6>")
                 newReleaseDate.addClass("card-subtitle mb-2 text-muted")
@@ -129,6 +120,7 @@ $(document).ready(function () {
                 newDiv.append(addWatchList)
                 $(".streamMovieInfo").html(newDiv)
                 }
+                // Adding Searched Show Card to html page
                 function tvStream(){
                 var tvDiv = $("<div>")
                 tvDiv.addClass("card")
@@ -154,7 +146,7 @@ $(document).ready(function () {
                 tvDiv.append(addTvWatchList)
                 $(".streamTvInfo").html(tvDiv)
                 }
-
+                // Will decide on what search to execute
                 if (mediaType === "tv"){
                     tvStream();
                 } else {
@@ -176,7 +168,7 @@ $(document).ready(function () {
                         console.log("SIMILAR MOVIE: " + simMovieList)
                     }
                     
-            
+            //  Adding Sim Searched Movie Card to html page
                     for (var i = 1; i < 4; i++) {
                     var simMovie = $("<div>")
                     simMovie.addClass("card")
@@ -202,15 +194,16 @@ $(document).ready(function () {
                     simMovie.append(simButton)
                     $(".relatedMovies").append(simMovie)
                     }
-                    //simMovieList variable displayer all titles
+                
                 });
+                // Ajax call for similar shows
                 const queryUrl3 = "https://api.themoviedb.org/3/tv/" + titleId + "/similar?api_key=" + apiKey + "&language=en-US&page=1";
                 // Ajax call to similar tv shows
                 $.ajax({
                     url: queryUrl3,
                     method: "GET"
                 }).then(function (similarShowData) {
-                    // variable directly to show titles 
+                    
                    
                     let similarShows = similarShowData.results
                     
@@ -248,7 +241,7 @@ $(document).ready(function () {
 
 
                 });
-            }     //simShowList displays shows
+            }     
             )
         };
         streamingData();

@@ -8,6 +8,18 @@ module.exports = function(sequelize, DataTypes) {
       watched: {
         type: DataTypes.BOOLEAN,
         
+      },
+      rating: {
+        type: DataTypes.INTEGER
+
+      }, 
+      poster: {
+        type: DataTypes.STRING
+
+      },
+      date: {
+       type:  DataTypes.DATEONLY
+
       }
     });
 
