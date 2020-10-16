@@ -3,23 +3,23 @@
   <h1>My Watch List</h1>
   {{!-- Watch list cards --}}
 
-{{!-- This is where handlebars can go --}}
+{{#each movies}}
   <div class="container">
-    <div class="row border">{{#each movies}}
-      <div class="col-5">
-        <div class="card bg-dark text-white">
-          <img class="" src="" alt="">
+    <div class="row text-center">
+      <div class="col justify-content-center">
+        <div class="card bg-dark text-white  mb-3 pb-3">
           <div class="card-img-overlay">
-            <h5 class="card-title">{{title}}Show or Movie Title</h5>
-            <p class="card-text"> Seasons</p>
-            <p class="card-text"> Description</p>
-           
-            <a href="#" class="card-link">Where this show or movie is currently streaming</a>
+            <h5 class="card-title">Original Title: {{title}}</h5>
+            <img src={{poster}} alt="Poster">
+            <p class="card-text">Rating: {{ rating }}</p>
+            <p class="card-text">Release Date: {{ date }}</p>
+           <a href="#" class="card-link">Where this show or movie is currently streaming</a>
           </div>
         </div>
       </div>
-       {{/each}}
     </div>
   </div>
-{{!-- each handlebars can go here --}}
+  <br>
+  <hr>
+{{/each}}
 

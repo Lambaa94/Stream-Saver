@@ -30,8 +30,10 @@ module.exports = function (app) {
     // POST route for saving a new post
     app.post("/api/watchlists", isAuthenticated, function (req, res) {
         console.log("IS AUTHENTIC")
-        db.watchList.create(req.body).then(function (dbwatchlist) {
+        const newWatch = {title: req.body.title, rating: req.body.rating, poster: req.body.poster, date: req.body.date, UserId: req.user.id}
+        db.watchList.create(newWatch).then(function (dbwatchlist) {
             console.log("I AM WORKING")
+            
             res.json(dbwatchlist);
         });
     });
