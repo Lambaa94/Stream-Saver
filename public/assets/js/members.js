@@ -8,17 +8,7 @@ $(document).ready(function () {
     
   });
 
-  $(document).on('click', '.addMovie', function(event){
-    event.preventDefault()
-    const searchedMovie = $("#movieTitle").text();
-    console.log(searchedMovie)
-    console.log(" ADDING NEW MOVIE")
-    $.post("api/watchlists/", function (data) {
-
-
-    })
-
-  });
+  
   $(document).on('click', '.addShow', function(event){
     event.preventDefault()
     

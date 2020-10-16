@@ -36,7 +36,7 @@ module.exports = function(app) {
     res.render("member")
   });
 
-
+console.log("im writing this to do another pull and commit.")
   // The Main page of the application
   app.get("/watchlist", isAuthenticated, function(req, res) {
    
@@ -51,7 +51,7 @@ module.exports = function(app) {
           res.render("index", {movies: movieData})
 
       });
-  }else{res.json({})};
+  } else {res.json({})};
     
   });
 
