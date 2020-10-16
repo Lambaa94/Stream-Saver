@@ -7,7 +7,6 @@ body {
   color: white;
   text-shadow: 2px 2px rgba(65, 104, 211);
 }
-
 .navbar-brand {
   float: left;
   padding: 15px 15px;
@@ -15,84 +14,67 @@ body {
   line-height: 20px;
   height: 50px;
 }
-
 .navbar-brand:hover {
   color: white;
 }
-
 .navbar-default {
   background-color:rgb(20, 20, 20);
   border-color: rgb(20, 20, 20);
   box-shadow: 0 5px 15px rgba(65, 104, 211);
 }
-
 .navbar-default .navbar-brand {
-  color: #ffffff;
+  color: #FFFFFF;
 }
-
 .btn-default {
   color: rgb(255, 255, 255);
   background-color: rgb(20, 20, 20);
   box-shadow: 0 5px 15px rgba(65, 104, 211);
   border-color: rgb(20, 20, 20);
 }
-
-
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
   font-weight: 600;
   line-height: 1.1;
-  color: #ffffff;
+  color: #FFFFFF;
   margin-bottom: 20px;
 }
-
 form.login {
   margin-top: 10px;
 }
 
-}
 button.btn.btn-default:hover {
  color: rgb(65, 104, 211);
  box-shadow: 0 5px 15px rgba(65, 104, 211)
 }
-
 #email-input {
   box-shadow: 0 5px 15px rgba(65, 104, 211);
 }
-
 #email-input:focus {
   color: rgb(0, 0, 0);
   box-shadow: 0 3px 7px rgb(255, 255, 255);
 }
-
 #password-input {
   box-shadow: 0 5px 15px rgba(65, 104, 211);
 }
-
 #password-input:focus {
   color: rgb(0, 0, 0);
   box-shadow: 0 5px 15px rgb(255, 255, 255);
 }
-
 #name-input {
   box-shadow: 0 5px 15px rgba(65, 104, 211);
 }
-
 #name-input:focus {
   color: rgb(0, 0, 0);
   box-shadow: 0 5px 15px rgb(255, 255, 255);
 }
 
-}
 a.navbar-brand:hover {
   color: rgb(65, 104, 211);
   box-shadow: 0 3px 7px rgba(65, 104, 211);
 }
-
 .h2 {
   font-weight: bolder;
 }
-
 .footer {
   position: fixed;
   left: 0;
@@ -103,44 +85,36 @@ a.navbar-brand:hover {
   color: white;
   text-align: center;
 }
-
 #member-login {
   font-size: 20px;
   text-align: center;
   margin-top: -5px;  
 }
-
 .navbar-brand {
   color: white;
 }
-
 .jumbotron h1, .jumbotron .h1 {
   color:  rgb(20, 20, 20);
 }
-
 h3, .h3 {
   font-size: 24px;
   color: rgb(20, 20, 20); ;
 }
-
 #started {
   color: rgb(20, 20, 20); ;
   text-shadow: none;
   font-weight: bolder;
 }
-
 #signin {
   color: rgb(20, 20, 20); ;
   text-shadow: none;
   font-weight: bolder;
 }
-
 #signup {
   color: rgb(20, 20, 20); ;
   text-shadow: none;
   font-weight: bolder;
 }
-
 img {
   vertical-align: middle;
   display: block;
