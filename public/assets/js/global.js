@@ -82,8 +82,8 @@ $(document).ready(function () {
                 // Adding Searched Movie Card to html page
                 function movieStream() {
                     var newDiv = $("<div>")
-                    newDiv.addClass("card")
-                    newDiv.attr("style", "width: 40rem")
+                    newDiv.addClass("card col-4")
+//                     newDiv.attr("style", "width: 40rem")
                     var nextDiv = $("<div>")
                     nextDiv.addClass("card-body")
                     newDiv.append(nextDiv)
@@ -235,8 +235,8 @@ $(document).ready(function () {
                     //  Adding Sim Searched Movie Card to html page
                     for (var i = 1; i < 4; i++) {
                         var simMovie = $("<div>")
-                        simMovie.addClass("card")
-                        simMovie.attr("style", "width: 40rem")
+                        simMovie.addClass("card col-4")
+//                         simMovie.attr("style", "width: 40rem")
                         var div2 = $("<div>")
                         div2.addClass("card-body")
                         simMovie.append(div2)
