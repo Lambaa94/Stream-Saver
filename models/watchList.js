@@ -20,6 +20,9 @@ module.exports = function(sequelize, DataTypes) {
       date: {
        type:  DataTypes.DATEONLY
 
+      },
+      media_type: {
+        type: DataTypes.BOOLEAN
       }
     });
 

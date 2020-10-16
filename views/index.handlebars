@@ -1,25 +1,49 @@
-{{!-- add to github --}}
 
-  <h1>My Watch List</h1>
-  {{!-- Watch list cards --}}
+<h1>My Watch List</h1>
+{{!-- Watch list cards --}}
 
 {{#each movies}}
-  <div class="container">
-    <div class="row text-center">
-      <div class="col justify-content-center">
+{{#if media_type}}
+this is a movie
+  <div class="row text-center">
+    <div class="col">
+      
+    <div class="col-6 justify-content-center">
+      <div class="card bg-dark text-white  mb-3 pb-3">
+        <div class="card-img">
+          <p><button data-id={{ id }} class=" float-right">DELETE</button></p>
+          <h5 class="card-title">Original Title: {{ title }}</h5>
+          <img src={{ poster }} alt="Poster">
+          <p class="card-text">Rating: {{ rating }}</p>
+          <p class="card-text">Release Date: {{ date }}</p>
+          <a href="reelgood.com/movie/" class="card-link">Where this show or movie is currently streaming</a>
+        </div>
+      </div>
+      {{/if}}
+      {{/each}}
+
+      {{#each movies}}
+      {{#unless media_type}}
+
+
+      <div class="col-6 justify-content-center">
         <div class="card bg-dark text-white  mb-3 pb-3">
           <div class="card-img">
-            <h5 class="card-title">Original Title: {{title}}</h5>
-            <img src={{poster}} alt="Poster">
+            <p><button data-id={{ id }} class=" float-right">DELETE</button></p>
+            <h5 class="card-title">Original Title: {{ title }}</h5>
+            <img src={{ poster }} alt="Poster">
             <p class="card-text">Rating: {{ rating }}</p>
             <p class="card-text">Release Date: {{ date }}</p>
-           <a href="reelgood.com/movie/" class="card-link">Where this show or movie is currently streaming</a>
+            <a href="reelgood.com/movie/" class="card-link">Where this show or movie is currently streaming</a>
           </div>
         </div>
       </div>
+
+      <br>
+      {{/unless}}
+      {{/each}}
     </div>
   </div>
-  <br>
-  <hr>
-{{/each}}
-
+  </div>
+<br>
+<script type="text/javascript"></script>

@@ -20,7 +20,7 @@ $(document).ready(function () {
             newTitle = {
                 title: streamTitle, rating: rating,
                 poster: fullPosterURL, date: releaseDate,
-                media_type: mediaType
+                media_type: true
             }
             $.ajax("api/watchlists/", {
                 method: "POST",
@@ -37,7 +37,7 @@ $(document).ready(function () {
             newTitle = {
                 title: streamTvTitle, rating: showRating,
                 poster: fullPosterURL, date: firstAirDate,
-                media_type: mediaType
+                media_type: false
             }
             $.ajax("api/watchlists/", {
                 method: "POST",
@@ -172,7 +172,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simMovie1, rating: simRating1,
                             poster: simPoster1, date: simDate1,
-                            media_type: mediaType
+                            media_type: true
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -190,7 +190,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simMovie2, rating: simRating2,
                             poster: simPoster2, date: simDate2,
-                            media_type: mediaType
+                            media_type: true
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -207,7 +207,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simMovie3, rating: simRating3,
                             poster: simPoster3, date: simDate3,
-                            media_type: mediaType
+                            media_type: true
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -290,7 +290,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simShow1, rating: simShowRating1,
                             poster: simShowPoster1, date: simShowDate1,
-                            media_type: mediaTypeShow1
+                            media_type: false
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -307,7 +307,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simShow2, rating: simShowRating2,
                             poster: simShowPoster2, date: simShowDate2,
-                            media_type: mediaTypeShow2
+                            media_type: false
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -324,7 +324,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simShow3, rating: simShowRating3,
                             poster: simShowPoster3, date: simShowDate3,
-                            media_type: mediaTypeShow3
+                            media_type: false
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
