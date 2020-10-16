@@ -1,6 +1,6 @@
 <h1>My Watch List</h1>
 {{!-- Watch list cards --}}
-  <h3>Movies</h3>
+<h3>Movies</h3>
 <div class="row">
 
   {{#each movies}}
@@ -11,7 +11,7 @@
     <div class="col">
     <div class="card-group ">
       <div class="card">
-        <p><button data-id={{ id }} class=" float-right">DELETE</button></p>
+        <p><button data-id={{ id }} class="deleteBtn float-right">DELETE</button></p>
         <img src={{ poster }} alt="Poster">
         <div class="card-body">
           <h5 class="card-title">Original Title: {{ title }}</h5>
@@ -41,7 +41,7 @@
   <div class="col">
     <div class="card-group">
       <div class="card">
-        <p><button data-id={{ id }} class=" float-right">DELETE</button></p>
+        <p><button data-id={{ id }} class="deleteBtn float-right">DELETE</button></p>
         <img src={{ poster }} alt="Poster">
         <div class="card-body">
           <h5 class="card-title">Original Title: {{ title }}</h5>

@@ -398,7 +398,17 @@ $(document).ready(function () {
         };
         streamingData();
     });
-
+    $(".deleteBtn").on('click', function (event) {
+        var id = $(this).data("id");
+        event.preventDefault()
+        console.log("DELETE")
+        $.ajax("api/watchlists/" +id, {
+            method: "Delete",
+        }).then(function () {
+            console.log("Title has been deleted!")
+            window.location = "/watchlist"
+        })
+    });
 
 
 });
