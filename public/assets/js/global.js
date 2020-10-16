@@ -83,7 +83,7 @@ $(document).ready(function () {
                 function movieStream() {
                     var newDiv = $("<div>")
                     newDiv.addClass("card")
-                    newDiv.attr("style", "width: 40rem")
+                   
                     var nextDiv = $("<div>")
                     nextDiv.addClass("card-body")
                     newDiv.append(nextDiv)
