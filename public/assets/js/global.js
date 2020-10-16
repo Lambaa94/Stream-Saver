@@ -19,7 +19,8 @@ $(document).ready(function () {
             console.log("ADDING NEW MOVIE")
             newTitle = {
                 title: streamTitle, rating: rating,
-                poster: fullPosterURL, date: releaseDate
+                poster: fullPosterURL, date: releaseDate,
+                media_type: true
             }
             $.ajax("api/watchlists/", {
                 method: "POST",
@@ -35,7 +36,8 @@ $(document).ready(function () {
             console.log(" ADDING NEW SHOW")
             newTitle = {
                 title: streamTvTitle, rating: showRating,
-                poster: fullPosterURL, date: firstAirDate
+                poster: fullPosterURL, date: firstAirDate,
+                media_type: false
             }
             $.ajax("api/watchlists/", {
                 method: "POST",
@@ -169,7 +171,8 @@ $(document).ready(function () {
                         console.log("ADDING NEW SIM MOVIE-1")
                         newTitle = {
                             title: simMovie1, rating: simRating1,
-                            poster: simPoster1, date: simDate1
+                            poster: simPoster1, date: simDate1,
+                            media_type: true
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -186,7 +189,8 @@ $(document).ready(function () {
                         console.log("ADDING NEW SIM MOVIE-2")
                         newTitle = {
                             title: simMovie2, rating: simRating2,
-                            poster: simPoster2, date: simDate2
+                            poster: simPoster2, date: simDate2,
+                            media_type: true
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -202,7 +206,8 @@ $(document).ready(function () {
                         console.log("ADDING NEW SIM MOVIE-3")
                         newTitle = {
                             title: simMovie3, rating: simRating3,
-                            poster: simPoster3, date: simDate3
+                            poster: simPoster3, date: simDate3,
+                            media_type: true
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -284,7 +289,8 @@ $(document).ready(function () {
                         console.log("ADDING NEW SIM SHOW-1")
                         newTitle = {
                             title: simShow1, rating: simShowRating1,
-                            poster: simShowPoster1, date: simShowDate1
+                            poster: simShowPoster1, date: simShowDate1,
+                            media_type: false
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -300,7 +306,8 @@ $(document).ready(function () {
                         console.log("ADDING NEW SIM SHOW-2")
                         newTitle = {
                             title: simShow2, rating: simShowRating2,
-                            poster: simShowPoster2, date: simShowDate2
+                            poster: simShowPoster2, date: simShowDate2,
+                            media_type: false
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -316,7 +323,8 @@ $(document).ready(function () {
                         console.log("ADDING NEW SIM SHOW-3")
                         newTitle = {
                             title: simShow3, rating: simShowRating3,
-                            poster: simShowPoster3, date: simShowDate3
+                            poster: simShowPoster3, date: simShowDate3,
+                            media_type: false
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
