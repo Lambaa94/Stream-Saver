@@ -6,7 +6,7 @@ body {
   font-style: oblique;
   color: white!important;
   text-shadow: 2px 2px rgba(65, 104, 211);
-  background-image: url("../img/MIufnV.jpg");
+  background-image: url("../img/dvsup.png");
 }
 .navbar-brand {
   float: left;
@@ -14,6 +14,11 @@ body {
   font-size: 25px;
   line-height: 20px;
   height: 50px;
+}
+
+.bg-light {
+  background-color: rgb(20, 20, 20)!important;
+  box-shadow: 0 3px 10px rgba(65, 104, 211);
 }
 
 .navbar-default {
