@@ -29,7 +29,7 @@
 ```
 As a user, I want to know where I can stream the latest and greatest shows and movies.
 I want to save time by knowing how many seasons my show has,
-Along with where my shows and movies are streaming all in one app.
+Along with where my shows and movies are streaming and watch recommendations all in one app.
 I also want to save my favorite shows and movies to view later.
 
 ```
@@ -63,6 +63,7 @@ Use the live application via the Heroku link provided above
 * Node
 * Handlebars 
 * ORM
+* MVC 
 * JSON
 * JQuery 
 * Bootstrap
@@ -71,6 +72,7 @@ Use the live application via the Heroku link provided above
 
 Ian Fusi 
 * Github: [ianf777](https://github.com/ianf777) 
+* Email: <ianwfuzzy@gmail.com> 
 
  Max Goldstein
 * Github: [maxgoldstein93](https://github.com/maxgoldstein93) 
