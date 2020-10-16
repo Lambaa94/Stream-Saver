@@ -15,7 +15,7 @@
           <img src={{ poster }} alt="Poster">
           <p class="card-text">Rating: {{ rating }}</p>
           <p class="card-text">Release Date: {{ date }}</p>
-          <a href="reelgood.com/movie/" class="card-link">Where this show or movie is currently streaming</a>
+          <a href="reelgood.com/movie/"{{title}} class="card-link">Where this show or movie is currently streaming</a>
         </div>
       </div>
       {{/if}}
@@ -33,7 +33,7 @@
             <img src={{ poster }} alt="Poster">
             <p class="card-text">Rating: {{ rating }}</p>
             <p class="card-text">Release Date: {{ date }}</p>
-            <a href="reelgood.com/movie/" class="card-link">Where this show or movie is currently streaming</a>
+            <a href="reelgood.com/show/{{title}}"> Where this show or movie is currently streaming</a>
           </div>
         </div>
       </div>
@@ -45,4 +45,7 @@
   </div>
   </div>
 <br>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+
+
+</script>
