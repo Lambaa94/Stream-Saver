@@ -1,51 +1,63 @@
-
 <h1>My Watch List</h1>
 {{!-- Watch list cards --}}
+  <h3>Movies</h3>
+<div class="row">
 
-{{#each movies}}
-{{#if media_type}}
-  <div class="row text-center">
+  {{#each movies}}
+  {{#if media_type}}
+
+  
+  <div class="row">
     <div class="col">
-      
-    <div class="col-6 justify-content-center">
-      <div class="card bg-dark text-white  mb-3 pb-3">
-        <div class="card-img">
-          <p><button data-id={{ id }} class=" float-right">DELETE</button></p>
+    <div class="card-group ">
+      <div class="card">
+        <p><button data-id={{ id }} class=" float-right">DELETE</button></p>
+        <img src={{ poster }} alt="Poster">
+        <div class="card-body">
           <h5 class="card-title">Original Title: {{ title }}</h5>
-          <img src={{ poster }} alt="Poster">
           <p class="card-text">Rating: {{ rating }}</p>
           <p class="card-text">Release Date: {{ date }}</p>
-          <a href="reelgood.com/movie/"{{title}} class="card-link">Where this show or movie is currently streaming</a>
+          <a href="reelgood.com/movie/" class="card-link">Where this show or movie is currently streaming</a>
         </div>
       </div>
-      {{/if}}
-      {{/each}}
-
-      {{#each movies}}
-      {{#unless media_type}}
-
-
-      <div class="col-6 justify-content-center">
-        <div class="card bg-dark text-white  mb-3 pb-3">
-          <div class="card-img">
-            <p><button data-id={{ id }} class=" float-right">DELETE</button></p>
-            <h5 class="card-title">Original Title: {{ title }}</h5>
-            <img src={{ poster }} alt="Poster">
-            <p class="card-text">Rating: {{ rating }}</p>
-            <p class="card-text">Release Date: {{ date }}</p>
-            <a href="reelgood.com/show/{{title}}"> Where this show or movie is currently streaming</a>
-          </div>
-        </div>
-      </div>
-
-      <br>
-      {{/unless}}
-      {{/each}}
+    </div>
     </div>
   </div>
+    {{/if}}
+    {{/each }}
+
   </div>
-<br>
-<script type="text/javascript">
 
+</div>
 
-</script>
+ <h3>Shows</h3>
+<div class="row">
+ 
+  {{#each movies}}
+  {{#unless media_type}}
+
+ 
+  <div class="row">
+  <div class="col">
+    <div class="card-group">
+      <div class="card">
+        <p><button data-id={{ id }} class=" float-right">DELETE</button></p>
+        <img src={{ poster }} alt="Poster">
+        <div class="card-body">
+          <h5 class="card-title">Original Title: {{ title }}</h5>
+          <p class="card-text">Rating: {{ rating }}</p>
+          <p class="card-text">Release Date: {{ date }}</p>
+          <a href="reelgood.com/movie/" class="card-link">Where this show or movie is currently streaming</a>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    {{/unless}}
+    {{/each }}
+
+  </div>
+
+</div>
+<script type="text/javascript"></script>
