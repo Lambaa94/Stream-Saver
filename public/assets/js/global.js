@@ -20,7 +20,8 @@ $(document).ready(function () {
             newTitle = {
                 title: streamTitle, rating: rating,
                 poster: fullPosterURL, date: releaseDate,
-                media_type: true
+                media_type: true, 
+                // stream_url: streamUrl
             }
             $.ajax("api/watchlists/", {
                 method: "POST",
@@ -37,7 +38,8 @@ $(document).ready(function () {
             newTitle = {
                 title: streamTvTitle, rating: showRating,
                 poster: fullPosterURL, date: firstAirDate,
-                media_type: false
+                media_type: false, 
+                // stream_url: streamTvUrl
             }
             $.ajax("api/watchlists/", {
                 method: "POST",
@@ -78,11 +80,15 @@ $(document).ready(function () {
                 streamTvTitle = titleData.results[0].original_name;
                 showRating = titleData.results[0].vote_average;
                 firstAirDate = titleData.results[0].first_air_date;
-
+                // streamMovieUrl = "https://reelgood.com/movie/" + streamTitle + "-" + dateWithYear;
+            
+                // var dateWithYear = releaseDate.slice(0,4);
+                
+                console.log(releaseDate, "lookeyasdhf")
                 // Adding Searched Movie Card to html page
                 function movieStream() {
                     var newDiv = $("<div>")
-                    newDiv.addClass("card col-4")
+                    newDiv.addClass("card col")
 //                     newDiv.attr("style", "width: 40rem")
                     var nextDiv = $("<div>")
                     nextDiv.addClass("card-body")
@@ -115,8 +121,8 @@ $(document).ready(function () {
                 // Adding Searched Show Card to html page
                 function tvStream() {
                     var tvDiv = $("<div>")
-                    tvDiv.addClass("card")
-                    tvDiv.attr("style", "width: 200rem")
+                    tvDiv.addClass("card col")
+                    // tvDiv.attr("style", "width: 200rem")
                     var newerDiv = $("<div>")
                     newerDiv.addClass("card-body")
                     tvDiv.append(newerDiv)
@@ -173,6 +179,7 @@ $(document).ready(function () {
                             title: simMovie1, rating: simRating1,
                             poster: simPoster1, date: simDate1,
                             media_type: true
+                            // stream_url: movieUrl1
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -190,7 +197,8 @@ $(document).ready(function () {
                         newTitle = {
                             title: simMovie2, rating: simRating2,
                             poster: simPoster2, date: simDate2,
-                            media_type: true
+                            media_type: true 
+                            // stream_url: movieUrl2
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -207,7 +215,8 @@ $(document).ready(function () {
                         newTitle = {
                             title: simMovie3, rating: simRating3,
                             poster: simPoster3, date: simDate3,
-                            media_type: true
+                            media_type: true, 
+                            // stream_url: movieUrl3
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -235,7 +244,7 @@ $(document).ready(function () {
                     //  Adding Sim Searched Movie Card to html page
                     for (var i = 1; i < 4; i++) {
                         var simMovie = $("<div>")
-                        simMovie.addClass("card col-4")
+                        simMovie.addClass("card col")
 //                         simMovie.attr("style", "width: 40rem")
                         var div2 = $("<div>")
                         div2.addClass("card-body")
@@ -290,7 +299,8 @@ $(document).ready(function () {
                         newTitle = {
                             title: simShow1, rating: simShowRating1,
                             poster: simShowPoster1, date: simShowDate1,
-                            media_type: false
+                            media_type: false 
+                            // stream_url: showUrl1
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -307,7 +317,8 @@ $(document).ready(function () {
                         newTitle = {
                             title: simShow2, rating: simShowRating2,
                             poster: simShowPoster2, date: simShowDate2,
-                            media_type: false
+                            media_type: false, 
+                            //stream_url: showUrl2
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -324,7 +335,8 @@ $(document).ready(function () {
                         newTitle = {
                             title: simShow3, rating: simShowRating3,
                             poster: simShowPoster3, date: simShowDate3,
-                            media_type: false
+                            media_type: false, 
+                            //stream_url: showUrl3
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -350,8 +362,8 @@ $(document).ready(function () {
 
                     for (var i = 4; i < 7; i++) {
                         var simShow = $("<div>")
-                        simShow.addClass("card")
-                        simShow.attr("style", "width: 200rem")
+                        simShow.addClass("card col")
+                        simShow.attr("style", "d-flex")
                         var div3 = $("<div>")
                         div3.addClass("card-body")
                         simShow.append(div3)
