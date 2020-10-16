@@ -1,12 +1,38 @@
-
 <h1>My Watch List</h1>
 {{!-- Watch list cards --}}
+<div class="row">
+  {{#each movies}}
+  {{#if media_type}}
 
-{{#each movies}}
+  {{!-- {{#if @index }} --}}
+  <div class="row">
+    {{!-- {{/if}} --}}
+    <div class="card-group ">
+      <div class="card">
+        <p><button data-id={{ id }} class=" float-right">DELETE</button></p>
+        <img src={{ poster }} alt="Poster">
+        <div class="card-body">
+          <h5 class="card-title">Original Title: {{ title }}</h5>
+          <p class="card-text">Rating: {{ rating }}</p>
+          <p class="card-text">Release Date: {{ date }}</p>
+          <a href="reelgood.com/movie/" class="card-link">Where this show or movie is currently streaming</a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    {{/if}}
+    {{/each }}
+
+  </div>
+
+</div>
+
+
+{{!-- {{#each movies}}
 {{#if media_type}}
+<div class="container">
   <div class="row text-center">
-    <div class="col">
-      
     <div class="col-6 justify-content-center">
       <div class="card bg-dark text-white  mb-3 pb-3">
         <div class="card-img">
@@ -20,11 +46,12 @@
       </div>
       {{/if}}
       {{/each}}
+    </div> --}}
 
-      {{#each movies}}
-      {{#unless media_type}}
+{{!-- {{#each movies}}
+    {{#unless media_type}}
 
-
+    <div class="container">
       <div class="col-6 justify-content-center">
         <div class="card bg-dark text-white  mb-3 pb-3">
           <div class="card-img">
@@ -37,12 +64,40 @@
           </div>
         </div>
       </div>
-
-      <br>
-      {{/unless}}
-      {{/each}}
     </div>
+
+    <br>
+    {{/unless}}
+    {{/each}}
+
   </div>
+</div>
+<br> --}}
+<div class="row">
+  {{#each movies}}
+  {{#unless media_type}}
+
+  {{!-- {{#if @index }} --}}
+  <div class="row">
+    {{!-- {{/if}} --}}
+    <div class="card-group ">
+      <div class="card">
+        <p><button data-id={{ id }} class=" float-right">DELETE</button></p>
+        <img src={{ poster }} alt="Poster">
+        <div class="card-body">
+          <h5 class="card-title">Original Title: {{ title }}</h5>
+          <p class="card-text">Rating: {{ rating }}</p>
+          <p class="card-text">Release Date: {{ date }}</p>
+          <a href="reelgood.com/movie/" class="card-link">Where this show or movie is currently streaming</a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    {{/unless}}
+    {{/each }}
+
   </div>
-<br>
+
+</div>
 <script type="text/javascript"></script>
