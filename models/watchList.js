@@ -23,6 +23,9 @@ module.exports = function(sequelize, DataTypes) {
       },
       media_type: {
         type: DataTypes.BOOLEAN
+      },
+      stream_url: {
+        type: DataTypes.STRING
       }
     });
 

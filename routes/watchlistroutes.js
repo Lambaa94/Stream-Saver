@@ -30,7 +30,7 @@ module.exports = function (app) {
     // POST route for saving a new post
     app.post("/api/watchlists", isAuthenticated, function (req, res) {
         console.log("IS AUTHENTIC")
-        const newWatch = {title: req.body.title, rating: req.body.rating, poster: req.body.poster, date: req.body.date, media_type: req.body.media_type, UserId: req.user.id}
+        const newWatch = {title: req.body.title, rating: req.body.rating, poster: req.body.poster, date: req.body.date, media_type: req.body.media_type, stream_url: req.body.stream_url, UserId: req.user.id}
         db.watchList.create(newWatch).then(function (dbwatchlist) {
             console.log("I AM WORKING")
             

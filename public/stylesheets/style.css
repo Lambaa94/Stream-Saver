@@ -1,40 +1,145 @@
+/* MAIN BODY */
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
-  line-height: 1.42857143;
-  background-color: rgb(20, 20, 20);
+  line-height: 1.5;
   font-style: oblique;
   color: white!important;
-  text-shadow: 2px 2px rgba(65, 104, 211);
-  background-image: url("../img/dvsup.png");
+  background-image: url("../img/mainBackground.png");
 }
+
+/* NAVBAR */
 .navbar-brand {
-  float: left;
-  padding: 15px 15px;
+  padding: 15px;
   font-size: 25px;
   line-height: 20px;
   height: 50px;
 }
 
-.bg-light {
-  background-color: rgb(20, 20, 20)!important;
-  box-shadow: 0 3px 10px rgba(65, 104, 211);
+
+a.navbar-brand:hover {
+  color: rgb(65, 104, 211);
+  box-shadow: 0 3px 7px rgba(65, 104, 211);
 }
 
+.navbar-brand {
+  color: white;
+}
+
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+
+}
+
+/* is this anything? */
 .navbar-default {
   background-color:rgb(20, 20, 20);
   border-color: rgb(20, 20, 20);
   box-shadow: 0 5px 15px rgba(65, 104, 211);
 }
+/* is this anything? */
 .navbar-default .navbar-brand {
   color: #ffffff;
 }
+
+/* .BG --> navbar */
+
+.bg-light {
+  background-color: rgb(20, 20, 20)!important;
+  box-shadow: 0 3px 10px rgba(65, 104, 211);
+  color: whitesmoke;
+}
+
+
+/* BUTTONS */
+
 .btn-default {
   color: rgb(255, 255, 255);
   background-color: rgb(20, 20, 20);
   box-shadow: 0 5px 15px rgba(65, 104, 211);
   border-color: rgb(20, 20, 20);
 }
+
+button.deleteBtn:hover {
+  color: rgb(65, 104, 211);
+  box-shadow: 0 5px 15px rgba(65, 104, 211)
+ }
+ button.btn-default:hover {
+  color: rgb(65, 104, 211);
+  box-shadow: 0 5px 15px rgba(65, 104, 211)
+ }
+ button.btn.btn-default:hover {
+  color: rgb(65, 104, 211);
+  box-shadow: 0 5px 15px rgba(65, 104, 211)
+ }
+ .deleteBtn {
+  color: rgb(255, 255, 255);
+  background-color: rgb(20, 20, 20);
+  box-shadow: 0 5px 15px rgba(65, 104, 211);
+  border-color: rgb(20, 20, 20);
+ }
+
+ .addMovie {
+  color: rgb(255, 255, 255);
+  background-color: rgb(20, 20, 20);
+  /* box-shadow: 0 5px 15px rgba(65, 104, 211); */
+  border-color: rgb(20, 20, 20);
+}
+button.addMovie:hover {
+  color: rgb(65, 104, 211);
+  box-shadow: 0 5px 15px rgb(255, 255, 255);
+ }
+
+.addShow {
+  color: rgb(255, 255, 255);
+  background-color: rgb(20, 20, 20);
+  /* box-shadow: 0 5px 15px rgba(65, 104, 211); */
+  border-color: rgb(20, 20, 20);
+}
+button.addShow:hover {
+  color: rgb(65, 104, 211);
+  box-shadow: 0 5px 15px rgb(255, 255, 255);
+ }
+
+.relatedStreams button, .relatedMovies button {
+    color: rgb(255, 255, 255);
+    background-color: rgb(20, 20, 20);
+    /* box-shadow: 0 5px 15px rgba(65, 104, 211); */
+    border-color: rgb(20, 20, 20);
+}
+
+.relatedMovies button:hover, .relatedStreams button:hover {
+  color: rgb(65, 104, 211);
+  box-shadow: 0 5px 15px rgb(255, 255, 255);
+ }
+
+ #searchBtn {
+  color: rgb(255, 255, 255);
+  background-color: rgb(20, 20, 20);
+  box-shadow: 0 5px 15px rgba(65, 104, 211);
+  border-color: rgb(20, 20, 20);
+ }
+#searchBtn button:hover {
+  color: rgb(65, 104, 211);
+  box-shadow: 0 5px 15px rgb(255, 255, 255);
+}
+
+#searchText {
+  box-shadow: 0 5px 15px rgba(65, 104, 211);
+}
+
+#searchText-input:focus {
+  color: rgb(0, 0, 0);
+  box-shadow: 0 3px 7px rgb(255, 255, 255);
+}
+
+
+
+
+/* H TAGS */
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
   font-weight: 600;
@@ -42,14 +147,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #ffffff;
   margin-bottom: 20px;
 }
+
+.h2 {
+  font-weight: bolder;
+}
+
+/* LOGIN */
+
 form.login {
   margin-top: 10px;
 }
 
-button.btn.btn-default:hover {
- color: rgb(65, 104, 211);
- box-shadow: 0 5px 15px rgba(65, 104, 211)
-}
 #email-input {
   box-shadow: 0 5px 15px rgba(65, 104, 211);
 }
@@ -72,52 +180,60 @@ button.btn.btn-default:hover {
   box-shadow: 0 5px 15px rgb(255, 255, 255);
 }
 
-a.navbar-brand:hover {
-  color: rgb(65, 104, 211);
-  box-shadow: 0 3px 7px rgba(65, 104, 211);
-}
-.h2 {
-  font-weight: bolder;
-}
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgb(20, 20, 20);
-  box-shadow: 0 3px 7px rgba(65, 104, 211);
-  color: white;
-  text-align: center;
-}
+
 #member-login {
   font-size: 20px;
   text-align: center;
   margin-top: -5px;  
 }
-.navbar-brand {
-  color: white;
+
+.jumbotron {
+color: whitesmoke;
+background-image: url("../img/dark_Tire.png");
+box-shadow: 0 5px 15px rgb(255, 255, 255);
 }
-.jumbotron h1, .jumbotron .h1 {
-  color:  rgb(20, 20, 20);
-}
-h3, .h3 {
-  font-size: 24px;
-  color: rgb(20, 20, 20); ;
-}
+
 #started {
-  color: rgb(20, 20, 20); ;
+  color: whitesmoke ;
   text-shadow: none;
   font-weight: bolder;
 }
 #signin {
-  color: rgb(20, 20, 20); ;
+  color: whitesmoke; ;
   text-shadow: none;
   font-weight: bolder;
+  
 }
 #signup {
-  color: rgb(20, 20, 20); ;
+  color: whitesmoke;
   text-shadow: none;
   font-weight: bolder;
+  
+}
+
+/* CARDS */
+
+.card-img, .card-img-bottom {
+  border-bottom-right-radius: calc(.25rem - 1px);
+  border-bottom-left-radius: calc(.25rem - 1px);
+  width: 600px;
+  height: auto;
+}
+
+.card-body {
+  width: auto;
+  height: auto;
+  justify-content: center;
+ 
+}
+.card-subtle {
+  color: whitesmoke;
+}
+.card {
+  color: whitesmoke;
+  background-image: url("../img/dark_Tire.png");
+  box-shadow: 0 5px 15px rgb(255, 255, 255);
+  margin: 10px;
 }
 
 img {
@@ -128,27 +244,15 @@ img {
   margin-right: auto;
 } 
 
-.navbar {
-  position: relative;
-  min-height: 50px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
 
-}
 
-.card-img, .card-img-bottom {
-  border-bottom-right-radius: calc(.25rem - 1px);
-  border-bottom-left-radius: calc(.25rem - 1px);
-  width: 600px;
-  height: auto;
-}
-
-.bg-light {
-  background-color: rgb(20, 20, 20)!important;
-}
-
-.card-body {
-  width: auto;
-  height: auto;
-  justify-content: center;
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(20, 20, 20);
+  box-shadow: 0 3px 7px rgba(65, 104, 211);
+  color: white;
+  text-align: center;
 }
