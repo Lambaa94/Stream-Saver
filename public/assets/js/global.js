@@ -10,47 +10,13 @@ $(document).ready(function () {
         event.preventDefault();
         $(".relatedStreams").empty()
         $(".relatedMovies").empty()
+       
         //Grabbing the user input
         const searchItem = $("#searchText").val()
-
+        $("#searchText").val("")
         // When Adding Movie to Watchlist
-        $(document).on('click', '.addMovie', function (event) {
-            event.preventDefault()
-            console.log("ADDING NEW MOVIE")
-            newTitle = {
-                title: streamTitle, rating: rating,
-                poster: fullPosterURL, date: releaseDate,
-                media_type: true, 
-                // stream_url: streamUrl
-            }
-            $.ajax("api/watchlists/", {
-                method: "POST",
-                data: newTitle
-            }).then(function () {
-                console.log("Movie has been added!")
-                window.location = "/watchlist"
-            })
-        });
-        $(document).on('click', '.addShow', function (event) {
-            event.preventDefault()
+        
 
-            console.log(" ADDING NEW SHOW")
-            newTitle = {
-                title: streamTvTitle, rating: showRating,
-                poster: fullPosterURL, date: firstAirDate,
-                media_type: false, 
-                // stream_url: streamTvUrl
-            }
-            $.ajax("api/watchlists/", {
-                method: "POST",
-                data: newTitle
-            }).then(function () {
-                console.log("Show has been added!")
-                window.location = "/watchlist"
-            })
-        });
-        
-        
         // Ajax call to database to get tv show or movie data
         function streamingData() {
 
@@ -66,6 +32,43 @@ $(document).ready(function () {
             }).then(function (titleData) {
                 console.log(titleData)
                 titleId = titleData.results[0].id;
+                
+                $(document).on('click', '.addMovie', function (event) {
+                    event.preventDefault()
+                    console.log("ADDING NEW MOVIE")
+                    newTitle = {
+                        title: streamTitle, rating: rating,
+                        poster: fullPosterURL, date: releaseDate,
+                        media_type: true, stream_url: streamMovieUrl
+                    }
+                    $.ajax("api/watchlists/", {
+                        method: "POST",
+                        data: newTitle
+                    }).then(function () {
+                        console.log("Movie has been added!")
+                        window.location = "/watchlist"
+                    })
+                });
+                $(document).on('click', '.addShow', function (event) {
+                    event.preventDefault()
+        
+                    console.log(" ADDING NEW SHOW")
+                    newTitle = {
+                        title: streamTvTitle, rating: showRating,
+                        poster: fullPosterURL, date: firstAirDate,
+                        media_type: false, stream_url: streamTvUrl
+                    }
+                    $.ajax("api/watchlists/", {
+                        method: "POST",
+                        data: newTitle
+                    }).then(function () {
+                        console.log("Show has been added!")
+                        window.location = "/watchlist"
+                    })
+                });
+        
+                
+                
                 // Pulling info for searched Movie
                 streamTitle = titleData.results[0].original_title;
                 rating = titleData.results[0].vote_average;
@@ -80,20 +83,21 @@ $(document).ready(function () {
                 streamTvTitle = titleData.results[0].original_name;
                 showRating = titleData.results[0].vote_average;
                 firstAirDate = titleData.results[0].first_air_date;
-                // streamMovieUrl = "https://reelgood.com/movie/" + streamTitle + "-" + dateWithYear;
-            
-                // var dateWithYear = releaseDate.slice(0,4);
+                // To search where the movie is being streamed.
                 
-                console.log(releaseDate, "lookeyasdhf")
+                var streamMovieUrl = "https://www.justwatch.com/us/movie/" + streamTitle;
+                var streamTvUrl = "https://www.justwatch.com/us/tv-show/" + streamTvTitle;
+
+                
                 // Adding Searched Movie Card to html page
                 function movieStream() {
                     var newDiv = $("<div>")
                     newDiv.addClass("card col")
-//                     newDiv.attr("style", "width: 40rem")
+                    //                     newDiv.attr("style", "width: 40rem")
                     var nextDiv = $("<div>")
                     nextDiv.addClass("card-body")
                     newDiv.append(nextDiv)
-                    var newTitle = $("<h5>")
+                    var newTitle = $("<h3>")
                     newTitle.addClass("card-title")
                     newTitle.attr("id", "movieTitle")
                     newTitle.text("Original Title: " + streamTitle)
@@ -102,15 +106,15 @@ $(document).ready(function () {
                     moviePoster.attr("src", "http://image.tmdb.org/t/p/original" + poster)
                     moviePoster.attr("alt", "Movie Poster")
                     newDiv.append(moviePoster)
-                    var newReleaseDate = $("<h6>")
-                    newReleaseDate.addClass("card-subtitle text-muted")
+                    var newReleaseDate = $("<h4>")
+                    newReleaseDate.addClass("card-subtitle m-3")
                     newReleaseDate.text("Release Date: " + releaseDate)
                     newReleaseDate.attr("style", "color: white")
                     newDiv.append(newReleaseDate)
-                    var newRating = $("<p>")
+                    var newRating = $("<h4>")
                     newRating.addClass("card-text")
                     newRating.text("Rating: " + rating)
-                    newReleaseDate.append(newRating)
+                    newDiv.append(newRating)
                     var addWatchList = $("<button>")
                     addWatchList.text("Add To Watchlist")
                     addWatchList.addClass("addMovie")
@@ -126,7 +130,7 @@ $(document).ready(function () {
                     var newerDiv = $("<div>")
                     newerDiv.addClass("card-body")
                     tvDiv.append(newerDiv)
-                    var tvTitle = $("<h5>")
+                    var tvTitle = $("<h3>")
                     tvTitle.addClass("card-title")
                     tvTitle.text("Show Title: " + streamTvTitle)
                     newerDiv.append(tvTitle)
@@ -134,12 +138,12 @@ $(document).ready(function () {
                     showPoster.attr("src", "http://image.tmdb.org/t/p/original" + poster)
                     showPoster.attr("alt", "Show Poster")
                     tvDiv.append(showPoster)
-                    var newfirstAirDate = $("<h6>")
-                    newfirstAirDate.addClass("card-subtitle mb-2 text-muted")
+                    var newfirstAirDate = $("<h4>")
+                    newfirstAirDate.addClass("card-subtitle m-3")
                     newfirstAirDate.attr("style", "color: white")
                     newfirstAirDate.text("First Aired: " + firstAirDate)
                     tvDiv.append(newfirstAirDate)
-                    var tvRating = $("<p>")
+                    var tvRating = $("<h4>")
                     tvRating.addClass("card-text")
                     tvRating.text("Rating: " + showRating)
                     newfirstAirDate.append(tvRating)
@@ -155,7 +159,7 @@ $(document).ready(function () {
                 } else {
                     movieStream();
                 }
-                
+
                 // Ajax call to get similar movies
                 const queryUrl2 = "https://api.themoviedb.org/3/movie/" + titleId + "/similar?api_key=" + apiKey + "&language=en-US&page=1"
                 $.ajax({
@@ -170,16 +174,15 @@ $(document).ready(function () {
                         var simMovieList = similarMovies[i].original_title;
                         console.log("SIMILAR MOVIE: " + simMovieList)
                     }
-                    
+
                     $(document).on('click', '#1', function (event) {
                         event.preventDefault()
-            
+
                         console.log("ADDING NEW SIM MOVIE-1")
                         newTitle = {
                             title: simMovie1, rating: simRating1,
                             poster: simPoster1, date: simDate1,
-                            media_type: true
-                            // stream_url: movieUrl1
+                            media_type: true, stream_url: movieUrl1
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -188,17 +191,16 @@ $(document).ready(function () {
                             console.log("Movie has been added!")
                             window.location = "/watchlist"
                         })
-            
+
                     });
                     $(document).on('click', '#2', function (event) {
                         event.preventDefault()
-            
+
                         console.log("ADDING NEW SIM MOVIE-2")
                         newTitle = {
                             title: simMovie2, rating: simRating2,
                             poster: simPoster2, date: simDate2,
-                            media_type: true 
-                            // stream_url: movieUrl2
+                            media_type: true, stream_url: movieUrl2
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -210,13 +212,12 @@ $(document).ready(function () {
                     });
                     $(document).on('click', '#3', function (event) {
                         event.preventDefault()
-            
+
                         console.log("ADDING NEW SIM MOVIE-3")
                         newTitle = {
                             title: simMovie3, rating: simRating3,
                             poster: simPoster3, date: simDate3,
-                            media_type: true, 
-                            // stream_url: movieUrl3
+                            media_type: true, stream_url: movieUrl3
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -226,7 +227,7 @@ $(document).ready(function () {
                             window.location = "/watchlist"
                         })
                     });
-                    
+
                     var simMovie1 = similarMovies[1].original_title
                     var simPoster1 = "http://image.tmdb.org/t/p/original" + similarMovies[1].poster_path
                     var simDate1 = similarMovies[1].release_date
@@ -239,17 +240,21 @@ $(document).ready(function () {
                     var simPoster3 = "http://image.tmdb.org/t/p/original" + similarMovies[3].poster_path
                     var simDate3 = similarMovies[3].release_date
                     var simRating3 = similarMovies[3].vote_average
-                   
+
+                    // Movie stream url
+                    var movieUrl1 = "https://www.justwatch.com/us/movie/" + simMovie1;
+                    var movieUrl2 = "https://www.justwatch.com/us/movie/" + simMovie2;
+                    var movieUrl3 = "https://www.justwatch.com/us/movie/" + simMovie3;
 
                     //  Adding Sim Searched Movie Card to html page
                     for (var i = 1; i < 4; i++) {
                         var simMovie = $("<div>")
                         simMovie.addClass("card col")
-//                         simMovie.attr("style", "width: 40rem")
+                        //                         simMovie.attr("style", "width: 40rem")
                         var div2 = $("<div>")
                         div2.addClass("card-body")
                         simMovie.append(div2)
-                        var simTitle = $("<h5>")
+                        var simTitle = $("<h3>")
                         simTitle.addClass("card-title")
                         simTitle.text("Movie Title: " + similarMovies[i].original_title)
                         div2.append(simTitle)
@@ -257,12 +262,12 @@ $(document).ready(function () {
                         simMoviePoster.attr("src", "http://image.tmdb.org/t/p/original" + similarMovies[i].poster_path)
                         simMoviePoster.attr("alt", "Movie Poster")
                         simMovie.append(simMoviePoster)
-                        var simRelease = $("<h6>")
-                        simRelease.addClass("card-subtitle mb-2 text-muted")
+                        var simRelease = $("<h4>")
+                        simRelease.addClass("card-subtitle m-3")
                         simRelease.attr("style", "color: white")
                         simRelease.text("Release Date: " + similarMovies[i].release_date)
                         simMovie.append(simRelease)
-                        var simRating = $("<p>")
+                        var simRating = $("<h4>")
                         simRating.addClass("card-text")
                         simRating.text("Rating: " + similarMovies[i].vote_average)
                         simRelease.append(simRating)
@@ -294,13 +299,12 @@ $(document).ready(function () {
 
                     $(document).on('click', '#4', function (event) {
                         event.preventDefault()
-            
+
                         console.log("ADDING NEW SIM SHOW-1")
                         newTitle = {
                             title: simShow1, rating: simShowRating1,
                             poster: simShowPoster1, date: simShowDate1,
-                            media_type: false 
-                            // stream_url: showUrl1
+                            media_type: false, stream_url: showUrl1
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -312,13 +316,12 @@ $(document).ready(function () {
                     });
                     $(document).on('click', '#5', function (event) {
                         event.preventDefault()
-            
+
                         console.log("ADDING NEW SIM SHOW-2")
                         newTitle = {
                             title: simShow2, rating: simShowRating2,
                             poster: simShowPoster2, date: simShowDate2,
-                            media_type: false, 
-                            //stream_url: showUrl2
+                            media_type: false, stream_url: showUrl2
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -330,13 +333,12 @@ $(document).ready(function () {
                     });
                     $(document).on('click', '#6', function (event) {
                         event.preventDefault()
-            
+
                         console.log("ADDING NEW SIM SHOW-3")
                         newTitle = {
                             title: simShow3, rating: simShowRating3,
                             poster: simShowPoster3, date: simShowDate3,
-                            media_type: false, 
-                            //stream_url: showUrl3
+                            media_type: false, stream_url: showUrl3
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -358,7 +360,13 @@ $(document).ready(function () {
                     var simShowRating3 = similarShows[6].vote_average
                     var simShowPoster3 = "http://image.tmdb.org/t/p/original" + similarShows[6].poster_path
                     var simShowDate3 = similarShows[6].first_air_date
-                    
+
+                    // Show url for streamed shows
+
+                    var showUrl1 = "https://www.justwatch.com/us/tv-show/" + simShow1;
+                    var showUrl2 = "https://www.justwatch.com/us/tv-show/" + simShow2;
+                    var showUrl3 = "https://www.justwatch.com/us/tv-show/" + simShow3;
+
 
                     for (var i = 4; i < 7; i++) {
                         var simShow = $("<div>")
@@ -367,7 +375,7 @@ $(document).ready(function () {
                         var div3 = $("<div>")
                         div3.addClass("card-body")
                         simShow.append(div3)
-                        var showTitle = $("<h5>")
+                        var showTitle = $("<h3>")
                         showTitle.addClass("card-title")
                         showTitle.text("Show Title: " + similarShows[i].original_name)
                         div3.append(showTitle)
@@ -375,12 +383,12 @@ $(document).ready(function () {
                         simShowPoster.attr("src", "http://image.tmdb.org/t/p/original" + similarShows[i].poster_path)
                         simShowPoster.attr("alt", "Movie Poster")
                         simShow.append(simShowPoster)
-                        var firstAired = $("<h6>")
-                        firstAired.addClass("card-subtitle mb-2 text-muted")
+                        var firstAired = $("<h4>")
+                        firstAired.addClass("card-subtitle m-3")
                         firstAired.attr("style", "color: white")
                         firstAired.text("First Aired: " + similarShows[i].first_air_date)
                         simShow.append(firstAired)
-                        var showRating = $("<p>")
+                        var showRating = $("<h4>")
                         showRating.addClass("card-text")
                         showRating.text("Rating: " + similarShows[i].vote_average)
                         firstAired.append(showRating)
@@ -402,7 +410,7 @@ $(document).ready(function () {
         var id = $(this).data("id");
         event.preventDefault()
         console.log("DELETE")
-        $.ajax("api/watchlists/" +id, {
+        $.ajax("api/watchlists/" + id, {
             method: "Delete",
         }).then(function () {
             console.log("Title has been deleted!")
