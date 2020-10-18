@@ -5,6 +5,8 @@ $(document).ready(function () {
 
     });
 
+
+
     //Search Button
     $("#searchBtn").on("click", function (event) {
         event.preventDefault();
@@ -450,7 +452,20 @@ $(document).ready(function () {
             window.location = "/watchlist"
         })
     });
-
+    $(".switch").on("mousedown", function (event){
+        event.preventDefault();
+        console.log("updating to watched...", id);
+         var id = $(this).data("id")
+        $.ajax("/api/watchlists/" + id, {
+            method: "PUT",
+            data: {
+                watched: "checked"
+            }
+          }).then(function() {
+            console.log("updated to watched!");
+    
+            window.location = "/";
+    })})
 
 });
 
