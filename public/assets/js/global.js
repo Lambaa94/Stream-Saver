@@ -326,7 +326,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simShow1, rating: simShowRating1,
                             poster: simShowPoster1, date: simShowDate1,
-                            media_type: false, stream_url: showUrl1
+                            media_type: false, stream_url: showUrl1()
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -343,7 +343,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simShow2, rating: simShowRating2,
                             poster: simShowPoster2, date: simShowDate2,
-                            media_type: false, stream_url: showUrl2
+                            media_type: false, stream_url: showUrl2()
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -360,7 +360,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simShow3, rating: simShowRating3,
                             poster: simShowPoster3, date: simShowDate3,
-                            media_type: false, stream_url: showUrl3
+                            media_type: false, stream_url: showUrl3()
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
