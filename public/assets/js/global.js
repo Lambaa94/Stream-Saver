@@ -39,7 +39,7 @@ $(document).ready(function () {
                     newTitle = {
                         title: streamTitle, rating: rating,
                         poster: fullPosterURL, date: releaseDate,
-                        media_type: true, stream_url: streamMovieUrl
+                        media_type: true, stream_url: streamMovieURl()
                     }
                     $.ajax("api/watchlists/", {
                         method: "POST",
@@ -56,7 +56,7 @@ $(document).ready(function () {
                     newTitle = {
                         title: streamTvTitle, rating: showRating,
                         poster: fullPosterURL, date: firstAirDate,
-                        media_type: false, stream_url: streamTvUrl
+                        media_type: false, stream_url: streamTvUrl()
                     }
                     $.ajax("api/watchlists/", {
                         method: "POST",
@@ -85,9 +85,18 @@ $(document).ready(function () {
                 firstAirDate = titleData.results[0].first_air_date;
                 // To search where the movie is being streamed.
                 
-                var streamMovieUrl = "https://www.justwatch.com/us/movie/" + streamTitle;
-                var streamTvUrl = "https://www.justwatch.com/us/tv-show/" + streamTvTitle;
-
+                function streamMovieURl(){
+                    var streamTitleNew = streamTitle.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "")
+                    var streamMovieUrl = "https://www.justwatch.com/us/movie/" + streamTitleNew;
+                    return streamMovieUrl
+                };
+                function streamTvUrl(){
+                    var streamTvTitleNew = streamTvTitle.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "")
+                    var streamTvUrl = "https://www.justwatch.com/us/tv-show/" + streamTvTitleNew;
+                    return streamTvUrl
+                };
+                
+               
                 
                 // Adding Searched Movie Card to html page
                 function movieStream() {
@@ -182,7 +191,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simMovie1, rating: simRating1,
                             poster: simPoster1, date: simDate1,
-                            media_type: true, stream_url: movieUrl1
+                            media_type: true, stream_url: movieUrl1()
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -200,7 +209,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simMovie2, rating: simRating2,
                             poster: simPoster2, date: simDate2,
-                            media_type: true, stream_url: movieUrl2
+                            media_type: true, stream_url: movieUrl2()
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -217,7 +226,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simMovie3, rating: simRating3,
                             poster: simPoster3, date: simDate3,
-                            media_type: true, stream_url: movieUrl3
+                            media_type: true, stream_url: movieUrl3()
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -242,9 +251,22 @@ $(document).ready(function () {
                     var simRating3 = similarMovies[3].vote_average
 
                     // Movie stream url
-                    var movieUrl1 = "https://www.justwatch.com/us/movie/" + simMovie1;
-                    var movieUrl2 = "https://www.justwatch.com/us/movie/" + simMovie2;
-                    var movieUrl3 = "https://www.justwatch.com/us/movie/" + simMovie3;
+                    function movieUrl1(){
+                        var movieTNew1 = simMovie1.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "")
+                        var movieUrl1 = "https://www.justwatch.com/us/movie/" + movieTNew1;
+                        return movieUrl1
+                    };
+                    function movieUrl2(){
+                        var movieTNew2 = simMovie2.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "")
+                        var movieUrl2 = "https://www.justwatch.com/us/movie/" + movieTNew2;
+                        return movieUrl2
+                    };
+                    function movieUrl3(){
+                        var movieTNew3 = simMovie3.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "")
+                        var movieUrl3 = "https://www.justwatch.com/us/movie/" + movieTNew3;
+                        return movieUrl3
+                    };
+                    
 
                     //  Adding Sim Searched Movie Card to html page
                     for (var i = 1; i < 4; i++) {
@@ -304,7 +326,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simShow1, rating: simShowRating1,
                             poster: simShowPoster1, date: simShowDate1,
-                            media_type: false, stream_url: showUrl1
+                            media_type: false, stream_url: showUrl1()
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -321,7 +343,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simShow2, rating: simShowRating2,
                             poster: simShowPoster2, date: simShowDate2,
-                            media_type: false, stream_url: showUrl2
+                            media_type: false, stream_url: showUrl2()
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -338,7 +360,7 @@ $(document).ready(function () {
                         newTitle = {
                             title: simShow3, rating: simShowRating3,
                             poster: simShowPoster3, date: simShowDate3,
-                            media_type: false, stream_url: showUrl3
+                            media_type: false, stream_url: showUrl3()
                         }
                         $.ajax("api/watchlists/", {
                             method: "POST",
@@ -363,9 +385,23 @@ $(document).ready(function () {
 
                     // Show url for streamed shows
 
-                    var showUrl1 = "https://www.justwatch.com/us/tv-show/" + simShow1;
-                    var showUrl2 = "https://www.justwatch.com/us/tv-show/" + simShow2;
-                    var showUrl3 = "https://www.justwatch.com/us/tv-show/" + simShow3;
+                    function showUrl1() {
+                        var showTNew1 = simShow1.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "")
+                        var showUrl1 = "https://www.justwatch.com/us/tv-show/" + showTNew1;
+                        return showUrl1
+                    };
+                    function showUrl2() {
+                        var showTNew2 = simShow2.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "")
+                        var showUrl2 = "https://www.justwatch.com/us/tv-show/" + showTNew2;
+                        return showUrl2
+                    };
+                    function showUrl3() {
+                        var showTNew3 = simShow3.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "")
+                        var showUrl3 = "https://www.justwatch.com/us/tv-show/" + showTNew3;
+                        return showUrl3
+                    };
+
+        
 
 
                     for (var i = 4; i < 7; i++) {
