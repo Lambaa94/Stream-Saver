@@ -385,25 +385,23 @@ $(document).ready(function () {
 
                     // Show url for streamed shows
 
-                    function showUrl1(){
+                    function showUrl1() {
                         var showTNew1 = simShow1.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "")
-                        var showUrl1 = "https://www.justwatch.com/us/tv-show" + showTNew1;
+                        var showUrl1 = "https://www.justwatch.com/us/tv-show/" + showTNew1;
                         return showUrl1
                     };
-                    function showUrl2(){
+                    function showUrl2() {
                         var showTNew2 = simShow2.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "")
                         var showUrl2 = "https://www.justwatch.com/us/tv-show/" + showTNew2;
                         return showUrl2
                     };
-                    function showUrl3(){
+                    function showUrl3() {
                         var showTNew3 = simShow3.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "")
                         var showUrl3 = "https://www.justwatch.com/us/tv-show/" + showTNew3;
                         return showUrl3
                     };
 
-                    var showUrl1 = "https://www.justwatch.com/us/tv-show/" + simShow1;
-                    var showUrl2 = "https://www.justwatch.com/us/tv-show/" + simShow2;
-                    var showUrl3 = "https://www.justwatch.com/us/tv-show/" + simShow3;
+        
 
 
                     for (var i = 4; i < 7; i++) {
