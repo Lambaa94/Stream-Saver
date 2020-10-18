@@ -101,8 +101,7 @@ $(document).ready(function () {
                 // Adding Searched Movie Card to html page
                 function movieStream() {
                     var newDiv = $("<div>")
-                    newDiv.addClass("card col")
-                    //                     newDiv.attr("style", "width: 40rem")
+                    newDiv.addClass("card col-md")
                     var nextDiv = $("<div>")
                     nextDiv.addClass("card-body")
                     newDiv.append(nextDiv)
@@ -134,8 +133,7 @@ $(document).ready(function () {
                 // Adding Searched Show Card to html page
                 function tvStream() {
                     var tvDiv = $("<div>")
-                    tvDiv.addClass("card col")
-                    // tvDiv.attr("style", "width: 200rem")
+                    tvDiv.addClass("card col-md")
                     var newerDiv = $("<div>")
                     newerDiv.addClass("card-body")
                     tvDiv.append(newerDiv)
@@ -271,8 +269,7 @@ $(document).ready(function () {
                     //  Adding Sim Searched Movie Card to html page
                     for (var i = 1; i < 4; i++) {
                         var simMovie = $("<div>")
-                        simMovie.addClass("card col")
-                        //                         simMovie.attr("style", "width: 40rem")
+                        simMovie.addClass("card col-md")
                         var div2 = $("<div>")
                         div2.addClass("card-body")
                         simMovie.append(div2)
@@ -406,7 +403,7 @@ $(document).ready(function () {
 
                     for (var i = 4; i < 7; i++) {
                         var simShow = $("<div>")
-                        simShow.addClass("card col")
+                        simShow.addClass("card col-md")
                         simShow.attr("style", "d-flex")
                         var div3 = $("<div>")
                         div3.addClass("card-body")

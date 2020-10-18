@@ -10,9 +10,8 @@
   {{#if media_type}}
 
   
-  <div class="row">
-    <div class="col">
-    <div class="card-group ">
+    <div class="col-md-3">
+    <div class="card-group">
       <div class="card">
         <p><button data-id={{ id }} class="deleteBtn float-right">DELETE</button></p>
         <img src={{ poster }} alt="Poster">
@@ -25,7 +24,6 @@
       </div>
     </div>
     </div>
-  </div>
     {{/if}}
     {{/each }}
 
@@ -42,8 +40,7 @@
   {{#unless media_type}}
 
  
-  <div class="row">
-  <div class="col">
+  <div class="col-md-3">
     <div class="card-group">
       <div class="card">
         <p><button data-id={{ id }} class="deleteBtn float-right">DELETE</button></p>
@@ -57,7 +54,7 @@
       </div>
     </div>
     </div>
-    </div>
+   
 
     {{/unless}}
     {{/each }}
