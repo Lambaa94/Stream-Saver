@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="/stylesheets/button.css">
 <h1>My Watch List</h1>
 <br>
 <br>
@@ -9,8 +9,8 @@
   {{#each movies}}
   {{#if media_type}}
 
-  
-    <div class="col-md-3">
+
+  <div class="col-md-3">
     <div class="card-group">
       <div class="card">
         <p><button data-id={{ id }} class="deleteBtn float-right">DELETE</button></p>
@@ -20,26 +20,32 @@
           <p class="card-text">Rating: {{ rating }}</p>
           <p class="card-text">Release Date: {{ date }}</p>
           <a target="_blank" href={{ stream_url }} class="card-link">Where this movie is currently streaming!</a>
+          <h6>Watched
+          </h6>
+          <label class="switch">
+            <input class="switchy" data-id={{id}} type="checkbox" {{ watched }}>
+            <span></span>
+          </label>
         </div>
       </div>
     </div>
-    </div>
-    {{/if}}
-    {{/each }}
-
   </div>
+  {{/if}}
+  {{/each }}
+
+</div>
 
 </div>
 <br>
 <br>
 
- <h2>Shows</h2>
+<h2>Shows</h2>
 <div class="row">
- 
+
   {{#each movies}}
   {{#unless media_type}}
 
- 
+
   <div class="col-md-3">
     <div class="card-group">
       <div class="card">
@@ -50,16 +56,22 @@
           <p class="card-text">Rating: {{ rating }}</p>
           <p class="card-text">Release Date: {{ date }}</p>
           <a target="_blank" href="{{ stream_url }}" class="card-link">Where this show is currently streaming!</a>
+          <h6>Watched
+          </h6>
+          <label class="switch">
+            <input class="switchy" data-id={{id}} type="checkbox" {{ watched }}>
+            <span></span>
+          </label>
         </div>
       </div>
     </div>
-    </div>
-   
-
-    {{/unless}}
-    {{/each }}
-
   </div>
+
+
+  {{/unless}}
+  {{/each }}
+
+</div>
 
 </div>
 <br>

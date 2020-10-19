@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
         
       },
       watched: {
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.STRING,
         
       },
       rating: {
