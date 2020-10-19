@@ -23,7 +23,10 @@
 * [Questions](#questions)
 
 ## Screenshots 
-
+![screenshot1](./assets/images/screencapture-stream-saver-herokuapp-2020-10-18-23_32_55.png)
+![screenshot2](./assets/images/screencapture-stream-saver-herokuapp-signup-2020-10-18-23_33_28.png)
+![screenshot3](./assets/images/screencapture-stream-saver-herokuapp-members-2020-10-18-23_35_12.png)
+![screenshot4](./assets/images/screencapture-stream-saver-herokuapp-watchlist-2020-10-18-23_44_00.png)
 
 ## User Story
 ```
@@ -53,7 +56,7 @@ Use the live application via the Heroku link provided above
 
 ```
 ## Demo
-
+![demo](https://media.giphy.com/media/E1a5f7GKLYcBNErVT9/giphy.gif)
 ## Built With
 * Heroku
 * MySQL
