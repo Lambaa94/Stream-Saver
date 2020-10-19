@@ -39,16 +39,16 @@ module.exports = function (app) {
     });
 
     app.put("/api/watchlists/:id", function(req, res){
-        var id = req.user.id
-    
-        db.watchLists.update({
-            where: {
-                id: id
+        var id = req.params.id
+    console.log(id, "hey")
+        db.watchList.update(req.body,{
+            where: { 
+                id: id 
             }
-        }).then(function(data){
-            res.json(data)
-        })
-    })
+         }).then(function(data) {
+        res.json(data)
+    });
+    });
     
     // DELETE route for deleting posts
     app.delete("/api/watchlists/:id", function (req, res) {

@@ -23,7 +23,7 @@
           <h6>Watched
           </h6>
           <label class="switch">
-            <input class= "switch" data-id={{id}} type="checkbox" {{ watched }}>
+            <input class="switchy" data-id={{id}} type="checkbox" {{ watched }}>
             <span></span>
           </label>
         </div>
@@ -56,6 +56,12 @@
           <p class="card-text">Rating: {{ rating }}</p>
           <p class="card-text">Release Date: {{ date }}</p>
           <a target="_blank" href="{{ stream_url }}" class="card-link">Where this show is currently streaming!</a>
+          <h6>Watched
+          </h6>
+          <label class="switch">
+            <input class="switchy" data-id={{id}} type="checkbox" {{ watched }}>
+            <span></span>
+          </label>
         </div>
       </div>
     </div>

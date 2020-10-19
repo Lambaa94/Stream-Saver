@@ -452,11 +452,14 @@ $(document).ready(function () {
             window.location = "/watchlist"
         })
     });
-    $(".switch").on("mousedown", function (event){
-        event.preventDefault();
-        console.log("updating to watched...", id);
-         var id = $(this).data("id")
-        $.ajax("/api/watchlists/" + id, {
+    
+    $(".switchy").on("click", function (){
+       
+       
+        var id = $(this).data("id");
+         console.log("updating to watched...", id);
+
+        $.ajax("api/watchlists/" + id, {
             method: "PUT",
             data: {
                 watched: "checked"
@@ -464,7 +467,7 @@ $(document).ready(function () {
           }).then(function() {
             console.log("updated to watched!");
     
-            window.location = "/";
+            
     })})
 
 });
