@@ -258,3 +258,7 @@ img {
   color: white;
   text-align: center;
 }
+
+.row {
+  margin-right: 0px!important;
+}
