@@ -28,18 +28,19 @@
 ![screenshot3](./assets/images/screencapture-stream-saver-herokuapp-members-2020-10-18-23_35_12.png)
 ![screenshot4](./assets/images/screencapture-stream-saver-herokuapp-watchlist-2020-10-18-23_44_00.png)
 
+
 ## User Story
 ```
 As a user, I want to know where I can stream the latest and greatest shows and movies.
-I want to save time by knowing how many seasons my show has,
-Along with where my shows and movies are streaming and watch recommendations all in one app.
+I want to save time by marking which shows I watched and where they are currently streaming,
+Along with knowing where my shows and movies are streaming all in one app.
 I also want to save my favorite shows and movies to view later.
 
 ```
 
 ## Application Description
 
-An application that lets the user search for any show or movie they'd like to stream. This application shows where this show or movie is currently streaming and, if a show, how many seasons are available for easy viewing access. The user can navigate to a link that shares where the selected show or movie is currently streaming. The user can save the shows they want to watch that will be viewable once they sign into their account.
+An application that lets the user search for any show or movie they'd like to stream. This application shows where this show or movie is currently streaming, the realse date, and rating. The user can save the shows and movies they want to watch to a watchlist viewable once they sign into their account. The user can mark which content they've finished watching and delete from their watch list at any time.
 
 ## Installation 
 ```
