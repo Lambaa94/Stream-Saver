@@ -1,5 +1,5 @@
 # 🖥️ Stream Saver
-[CLICK HERE FOR LIVE HEROKU APPLICATION](https://stream-saver.herokuapp.com/)
+[CLICK HERE FOR LIVE HEROKU APPLICATION](https://streamsaver.herokuapp.com/)
 
 ## Table of Contents
 * [Screenshots](#screenshots)
