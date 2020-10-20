@@ -46,14 +46,4 @@ $(document).ready(function () {
   });
 
 
-
-  // Put route to add new movie/show to the database
-  // $.post("api/watchlists/", function (data) {
-  //   console.log(data)
-  // });
-
-
-
-  // and updates the HTML on the page
-
 });
