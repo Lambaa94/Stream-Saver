@@ -88,12 +88,12 @@ $(document).ready(function () {
                 // To search where the movie is being streamed.
                 
                 function streamMovieURl(){
-                    var streamTitleNew = streamTitle.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "")
+                    var streamTitleNew = streamTitle.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "").replace(/\,/g, "")
                     var streamMovieUrl = "https://www.justwatch.com/us/movie/" + streamTitleNew;
                     return streamMovieUrl
                 };
                 function streamTvUrl(){
-                    var streamTvTitleNew = streamTvTitle.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "")
+                    var streamTvTitleNew = streamTvTitle.replace(/ /g, "-").replace(/\&/g, "and").replace(/\./g, "").replace(/\'/g, "").replace(/\:/g, "").replace(/\!/g, "").replace(/\?/g, "").replace(/\$/g, "").replace(/\,/g, "")
                     var streamTvUrl = "https://www.justwatch.com/us/tv-show/" + streamTvTitleNew;
                     return streamTvUrl
                 };
