@@ -127,13 +127,18 @@ button.addShow:hover {
   box-shadow: 0 5px 15px rgba(65, 104, 211);
   border-color: rgb(20, 20, 20);
  }
-#searchBtn button:hover {
-  color: rgb(255, 255, 255);
-  box-shadow: 0 5px 15px rgb(255, 255, 255);
+#searchBtn:hover {
+  color: rgb(255, 255, 255)!important;
+  box-shadow: 0 5px 15px rgb(255, 255, 255)!important;
 }
 
 #searchText {
   box-shadow: 0 5px 15px rgba(65, 104, 211);
+}
+
+#searchText:hover {
+  color: rgb(255, 255, 255)!important;
+  box-shadow: 0 5px 15px rgb(255, 255, 255)!important;
 }
 
 #searchText-input:focus {
