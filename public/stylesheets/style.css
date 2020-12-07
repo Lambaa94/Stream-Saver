@@ -18,33 +18,36 @@ body {
   height: 50px;
 }
 
+.navbar-nav {
+  float: right
+}
 
 a.navbar-brand:hover {
   color: rgb(65, 104, 211);
   box-shadow: 0 3px 7px rgba(65, 104, 211);
+  border-radius: 10px;
 }
 
 .navbar-brand {
   color: white;
 }
 
+
+
+.nav-item:hover {
+ 
+    color: rgb(65, 104, 211);
+    box-shadow: 0 3px 7px rgba(65, 104, 211);
+    border-radius: 10px;
+   
+  
+}
+
 .navbar {
-  position: relative;
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 
-}
-
-/* is this anything? */
-.navbar-default {
-  background-color:rgb(20, 20, 20);
-  border-color: rgb(20, 20, 20);
-  box-shadow: 0 5px 15px rgba(65, 104, 211);
-}
-/* is this anything? */
-.navbar-default .navbar-brand {
-  color: #ffffff;
 }
 
 /* .BG --> navbar */
@@ -199,6 +202,7 @@ box-shadow: 0 5px 15px rgb(255, 255, 255);
   color: whitesmoke ;
   text-shadow: none;
   font-weight: bolder;
+  text-align: center;
 }
 #signin {
   color: whitesmoke; ;
