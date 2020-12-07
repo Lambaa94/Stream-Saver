@@ -83,7 +83,7 @@ button.deleteBtn:hover {
  .deleteBtn {
   color: rgb(255, 255, 255);
   background-color: rgb(20, 20, 20);
-  box-shadow: 0 5px 15px rgba(65, 104, 211);
+  box-shadow: 0 5px 15px rgb(255, 255, 255);
   border-color: rgb(20, 20, 20);
  }
 
@@ -128,7 +128,7 @@ button.addShow:hover {
   border-color: rgb(20, 20, 20);
  }
 #searchBtn button:hover {
-  color: rgb(65, 104, 211);
+  color: rgb(255, 255, 255);
   box-shadow: 0 5px 15px rgb(255, 255, 255);
 }
 
@@ -195,7 +195,7 @@ form.login {
 .jumbotron {
 color: whitesmoke;
 background-image: url("../img/dark_Tire.png");
-box-shadow: 0 5px 15px rgb(255, 255, 255);
+box-shadow: 0 5px 15px rgba(65, 104, 211);
 }
 
 #started {
@@ -208,14 +208,27 @@ box-shadow: 0 5px 15px rgb(255, 255, 255);
   color: whitesmoke; ;
   text-shadow: none;
   font-weight: bolder;
+  font-size: 30px;
   
 }
 #signup {
-  color: whitesmoke;
+  color: whitesmoke; ;
   text-shadow: none;
   font-weight: bolder;
-  
+  font-size: 30px;
+  float: right;
 }
+
+#signup:hover {
+  color: rgba(65, 104, 211);
+  text-decoration: none;
+}
+
+#signin:hover {
+  color: rgba(65, 104, 211);
+  text-decoration: none;
+}
+
 
 /* CARDS */
 
@@ -238,7 +251,7 @@ box-shadow: 0 5px 15px rgb(255, 255, 255);
 .card {
   color: whitesmoke;
   background-image: url("../img/dark_Tire.png");
-  box-shadow: 0 5px 15px rgb(255, 255, 255);
+  box-shadow: 0 5px 15px rgba(65, 104, 211);
   margin: 10px;
 }
 
@@ -250,7 +263,9 @@ img {
   margin-right: auto;
 } 
 
-
+.display-4 {
+  text-align: center;
+}
 
 .footer {
   position: fixed;
@@ -266,3 +281,50 @@ img {
 .row {
   margin-right: 0px!important;
 }
+
+form.login {
+  margin-top: 50px;
+}
+
+    /* jumbotron customization with box shadow addition for all browsers */
+
+.jumbotronLoginSignUp {
+
+  justify-content: center !important;
+  background-color: #dfdfdf !important;
+  padding: 34px 14px !important;
+  border-radius: 40px;
+  /* margin: 10px 10px 10px 10px auto !important; */
+  -webkit-box-shadow: 0 8px 9px rgba(65, 104, 211), 0 8px 9px rgba(65, 104, 211);
+  -moz-box-shadow: 0 8px 9px rgba(65, 104, 211), 0 8px 9px rgba(65, 104, 211);
+  box-shadow:  0 8px 9px rgba(65, 104, 211), 0 8px 9px rgba(65, 104, 211);
+
+}
+
+
+/* added class for centering within a container (currently for login/signup) */
+
+.vertical-center {
+
+  max-width: 650px !important;
+  justify-content: center !important;
+
+}
+
+
+/* remove cheap looking link underline and add a shine/hover */
+
+a {
+  text-decoration: none !important;
+}
+
+
+.formControl {
+
+  max-width: 400px !important;
+  margin-left:auto;
+  margin-right:auto;
+  justify-content: center !important;
+  
+}
+
