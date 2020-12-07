@@ -1,4 +1,5 @@
-// javascript for all pages
+// JavaScript for all pages
+
 $(document).ready(function () {
     $.get("/api/user_data").then(function (data) {
         $(".member-name").text(data.name);
@@ -7,15 +8,18 @@ $(document).ready(function () {
 
 
 
-    //Search Button
+//Search Button
+
     $("#searchBtn").on("click", function (event) {
         event.preventDefault();
         $(".relatedStreams").empty()
         $(".relatedMovies").empty()
        
         //Grabbing the user input
+
         const searchItem = $("#searchText").val()
         $("#searchText").val("")
+        
         // When Adding Movie to Watchlist
         
 
