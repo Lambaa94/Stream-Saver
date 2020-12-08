@@ -85,6 +85,8 @@ button.deleteBtn:hover {
   background-color: rgb(20, 20, 20);
   box-shadow: 0 5px 15px rgb(255, 255, 255);
   border-color: rgb(20, 20, 20);
+  border-radius: 40px;
+
  }
 
  .addMovie {
@@ -92,6 +94,7 @@ button.deleteBtn:hover {
   background-color: rgb(20, 20, 20);
   /* box-shadow: 0 5px 15px rgba(65, 104, 211); */
   border-color: rgb(20, 20, 20);
+  border-radius: 40px;
 }
 button.addMovie:hover {
   color: rgb(65, 104, 211);
@@ -103,6 +106,7 @@ button.addMovie:hover {
   background-color: rgb(20, 20, 20);
   /* box-shadow: 0 5px 15px rgba(65, 104, 211); */
   border-color: rgb(20, 20, 20);
+  border-radius: 40px;
 }
 button.addShow:hover {
   color: rgb(65, 104, 211);
@@ -114,11 +118,13 @@ button.addShow:hover {
     background-color: rgb(20, 20, 20);
     /* box-shadow: 0 5px 15px rgba(65, 104, 211); */
     border-color: rgb(20, 20, 20);
+    border-radius: 40px;
 }
 
 .relatedMovies button:hover, .relatedStreams button:hover {
   color: rgb(65, 104, 211);
   box-shadow: 0 5px 15px rgb(255, 255, 255);
+  
  }
 
  #searchBtn {
