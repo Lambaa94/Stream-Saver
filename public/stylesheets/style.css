@@ -224,23 +224,27 @@ box-shadow: 0 5px 15px rgba(65, 104, 211);
   text-align: center;
 }
 #signin {
-  color: whitesmoke; ;
-  text-shadow: none;
+  
+  text-shadow: whitesmoke;
   font-weight: bolder;
   font-size: 30px;
+  text-align: center;
   
 }
 #signup {
-  color: whitesmoke; ;
-  text-shadow: none;
+  
+  text-shadow: whitesmoke;
   font-weight: bolder;
   font-size: 30px;
-  float: right;
+  text-align: center;
+  
+  
 }
 
 #signup:hover {
   color: rgba(65, 104, 211);
   text-decoration: none;
+  
 }
 
 #signin:hover {
