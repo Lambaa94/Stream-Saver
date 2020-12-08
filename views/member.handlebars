@@ -10,23 +10,24 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link" style="color: whitesmoke;" href="/members">Find Shows & Movies</a>
+        <a class="nav-item nav-link" style="color: rgba(65, 104, 211)" href="/members">Find Shows & Movies</a>
         <a class="nav-item nav-link" style="color: whitesmoke;" href="/watchlist">My Watch List</a>
         <a class="nav-item nav-link" style="color: whitesmoke;" href="/logout">Logout</a>
       </div>
     </div>
   </nav>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-1">
+{{!-- <div class="container"> --}}
+  {{!-- <div class="row"> --}}
+    {{!-- <div class="col-md-6"> --}}
       {{!-- Member Name --}}
-      <h3>Welcome <span class="member-name">{{ name }}</span>!</h3>
-    </div>
-  </div>
-</div>
-</div>
-
+      {{!-- <h4>Streamer <span class="member-name">{{ name }}</span></h4> --}}
+    {{!-- </div> --}}
+  {{!-- </div> --}}
+{{!-- </div> --}}
+{{!-- </div> --}}
+<br/>
+<br/>
 <form class="form-inline justify-content-center">
   <input id="searchText" class="form-control mr-3" type="search" placeholder="Search shows & movies..."
     aria-label="Search">
@@ -40,7 +41,7 @@
         <section class="row">
           <section class="col-md ml-5">
             <h3 class="streamTitles text-center">Movie Stream</h3>
-            <section class="streamMovieInfo text-center vertical-center"><img class="placeholders vertical-center" src="/img/streaming.png" alt="streaming services" width="300px" height="350px"></section>
+            <section class="streamMovieInfo text-center vertical-center ml-5"><img class="placeholders vertical-center" src="/img/streaming.png" alt="streaming services" width="300px" height="350px"></section>
           </section>
 
           <section class="col-md ml-5">
