@@ -85,6 +85,8 @@ button.deleteBtn:hover {
   background-color: rgb(20, 20, 20);
   box-shadow: 0 5px 15px rgb(255, 255, 255);
   border-color: rgb(20, 20, 20);
+  border-radius: 40px;
+
  }
 
  .addMovie {
@@ -92,6 +94,7 @@ button.deleteBtn:hover {
   background-color: rgb(20, 20, 20);
   /* box-shadow: 0 5px 15px rgba(65, 104, 211); */
   border-color: rgb(20, 20, 20);
+  border-radius: 40px;
 }
 button.addMovie:hover {
   color: rgb(65, 104, 211);
@@ -103,6 +106,7 @@ button.addMovie:hover {
   background-color: rgb(20, 20, 20);
   /* box-shadow: 0 5px 15px rgba(65, 104, 211); */
   border-color: rgb(20, 20, 20);
+  border-radius: 40px;
 }
 button.addShow:hover {
   color: rgb(65, 104, 211);
@@ -114,11 +118,13 @@ button.addShow:hover {
     background-color: rgb(20, 20, 20);
     /* box-shadow: 0 5px 15px rgba(65, 104, 211); */
     border-color: rgb(20, 20, 20);
+    border-radius: 40px;
 }
 
 .relatedMovies button:hover, .relatedStreams button:hover {
   color: rgb(65, 104, 211);
   box-shadow: 0 5px 15px rgb(255, 255, 255);
+  
  }
 
  #searchBtn {
@@ -127,13 +133,18 @@ button.addShow:hover {
   box-shadow: 0 5px 15px rgba(65, 104, 211);
   border-color: rgb(20, 20, 20);
  }
-#searchBtn button:hover {
-  color: rgb(255, 255, 255);
-  box-shadow: 0 5px 15px rgb(255, 255, 255);
+#searchBtn:hover {
+  color: rgb(255, 255, 255)!important;
+  box-shadow: 0 5px 15px rgb(255, 255, 255)!important;
 }
 
 #searchText {
   box-shadow: 0 5px 15px rgba(65, 104, 211);
+}
+
+#searchText:hover {
+  color: rgb(255, 255, 255)!important;
+  box-shadow: 0 5px 15px rgb(255, 255, 255)!important;
 }
 
 #searchText-input:focus {
@@ -253,6 +264,7 @@ box-shadow: 0 5px 15px rgba(65, 104, 211);
   background-image: url("../img/dark_Tire.png");
   box-shadow: 0 5px 15px rgba(65, 104, 211);
   margin: 10px;
+  border-radius: 40px;
 }
 
 img {
@@ -326,5 +338,16 @@ a {
   margin-right:auto;
   justify-content: center !important;
   
+}
+
+.placeholders {
+  justify-content: center !important;
+  background-image: url("../img/dark_Tire.png");
+  padding: 34px 14px !important;
+  border-radius: 40px;
+  /* margin: 10px 10px 10px 10px auto !important; */
+  -webkit-box-shadow: 0 8px 9px rgba(65, 104, 211), 0 8px 9px rgba(65, 104, 211);
+  -moz-box-shadow: 0 8px 9px rgba(65, 104, 211), 0 8px 9px rgba(65, 104, 211);
+  box-shadow:  0 8px 9px rgba(65, 104, 211), 0 8px 9px rgba(65, 104, 211);
 }
 

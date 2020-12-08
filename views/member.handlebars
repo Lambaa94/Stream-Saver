@@ -21,7 +21,7 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-1">
       {{!-- Member Name --}}
-      <h2>Welcome <span class="member-name">{{ name }}</span></h2>
+      <h3>Welcome <span class="member-name">{{ name }}</span>!</h3>
     </div>
   </div>
 </div>
@@ -30,21 +30,22 @@
 <form class="form-inline justify-content-center">
   <input id="searchText" class="form-control mr-3" type="search" placeholder="Search shows & movies..."
     aria-label="Search">
-  <button id="searchBtn" class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+  <button id="searchBtn" class="btn btn-default" type="submit">Search</button>
 </form>
 
 
 <div class="row">
   <div class="col">
-    <h3 class="streamTitles text-center">Save Your Stream Here!<h3>
 
         <section class="row">
-          <section class="col-md">
-            <section class="streamMovieInfo text-center"><img src="/img/streaming.png" alt="streaming services" width="300px" height="400px"></section>
+          <section class="col-md ml-5">
+            <h3 class="streamTitles text-center">Movie Stream</h3>
+            <section class="streamMovieInfo text-center vertical-center"><img class="placeholders vertical-center" src="/img/streaming.png" alt="streaming services" width="300px" height="350px"></section>
           </section>
 
-          <section class="col-md">
-            <section class="streamTvInfo text-center"><img src="/img/streaming.png" alt="streaming services" width="300px" height="400px"></section>
+          <section class="col-md ml-5">
+            <h3 class="streamTitles text-center">Show Stream</h3>
+            <section class="streamTvInfo text-center"><img class="placeholders vertical-center" src="/img/streaming.png" alt="streaming services" width="300px" height="350px"></section>
           </section>
         </section>
   </div>
@@ -55,8 +56,8 @@
     <h3 class="similarTitles text-center">Related Movies<h3>
 
         <section class="row">
-          <section class="col-md">
-            <section class="row relatedMovies text-center"><img src="/img/filmreel.png" alt="film reel" width="300px" height="400px"></section>
+          <section class="col-md ml-5">
+            <section class="row relatedMovies text-center"><img class="placeholders vertical-center" src="/img/filmreel.png" alt="film reel" width="300px" height="400px"></section>
           </section>
         </section>
   </div>
@@ -66,8 +67,8 @@
     <h3 class="similarTitles text-center">Related Shows<h3>
 
         <section class="row">
-          <section class="col-md">
-            <section class="row relatedStreams text-center"><img src="/img/tvshow.png" alt="tv" width="300px" height="400px"></section>
+          <section class="col-md ml-5">
+            <section class="row relatedStreams text-center"><img class="placeholders vertical-center" src="/img/tvshow.png" alt="tv" width="300px" height="400px"></section>
           </section>
         </section>
   </div>
