@@ -107,6 +107,7 @@ button.addMovie:hover {
   /* box-shadow: 0 5px 15px rgba(65, 104, 211); */
   border-color: rgb(20, 20, 20);
   border-radius: 40px;
+  line-height: 10px;
 }
 button.addShow:hover {
   color: rgb(65, 104, 211);
@@ -363,3 +364,6 @@ a {
   box-shadow:  0 8px 9px rgba(65, 104, 211), 0 8px 9px rgba(65, 104, 211);
 }
 
+#Add1{
+  height: 25.97px;
+}
